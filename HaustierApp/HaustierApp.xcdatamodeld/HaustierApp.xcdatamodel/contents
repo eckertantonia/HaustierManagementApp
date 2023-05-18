@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Alarm" representedClassName="Alarm" syncable="YES" codeGenerationType="category">
+        <attribute name="notification" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="medication" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medication" inverseName="alarm" inverseEntity="Medication"/>
+    </entity>
+    <entity name="Diagnosis" representedClassName="Diagnosis" syncable="YES" codeGenerationType="class">
+        <attribute name="dateOfDiagnosis" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="diagnosisName" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="veterinarian" optional="YES" attributeType="String"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="diagnosis" inverseEntity="Pet"/>
+    </entity>
+    <entity name="Food" representedClassName="Food" syncable="YES" codeGenerationType="class">
+        <attribute name="amountOfFood" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="product" optional="YES" attributeType="String"/>
+        <attribute name="typeOfFood" optional="YES" attributeType="String"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="food" inverseEntity="Pet"/>
+    </entity>
+    <entity name="FoodIntolerance" representedClassName="FoodIntolerance" syncable="YES" codeGenerationType="class">
+        <attribute name="intolerance" optional="YES" attributeType="String"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="foodIntolerance" inverseEntity="Pet"/>
+    </entity>
+    <entity name="Medication" representedClassName="Medication" syncable="YES" codeGenerationType="class">
+        <attribute name="amountOfMedication" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="frequencyOfMedication" optional="YES" attributeType="String"/>
+        <attribute name="medication" optional="YES" attributeType="String"/>
+        <relationship name="alarm" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alarm" inverseName="medication" inverseEntity="Alarm"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="medication" inverseEntity="Pet"/>
+    </entity>
+    <entity name="Pet" representedClassName="Pet" syncable="YES" codeGenerationType="category">
+        <relationship name="diagnosis" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Diagnosis" inverseName="pet" inverseEntity="Diagnosis"/>
+        <relationship name="food" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food" inverseName="pet" inverseEntity="Food"/>
+        <relationship name="foodIntolerance" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FoodIntolerance" inverseName="pet" inverseEntity="FoodIntolerance"/>
+        <relationship name="medication" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medication" inverseName="pet" inverseEntity="Medication"/>
+        <relationship name="petData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PetData" inverseName="pet" inverseEntity="PetData"/>
+        <relationship name="vaccines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vaccine" inverseName="pet" inverseEntity="Vaccine"/>
+    </entity>
+    <entity name="PetData" representedClassName=".PetData" syncable="YES">
+        <attribute name="breed" optional="YES" attributeType="String"/>
+        <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="height" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="placeOfOrigin" optional="YES" attributeType="String"/>
+        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="petData" inverseEntity="Pet"/>
+    </entity>
+    <entity name="Vaccine" representedClassName="Vaccine" syncable="YES" codeGenerationType="class">
+        <attribute name="disease" optional="YES" attributeType="String"/>
+        <attribute name="information" optional="YES" attributeType="String"/>
+        <attribute name="lastVaccination" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="nextVaccination" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="recommendedAge" optional="YES" attributeType="String"/>
+        <attribute name="selected" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="vaccineName" optional="YES" attributeType="String"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="vaccines" inverseEntity="Pet"/>
+    </entity>
+</model>
