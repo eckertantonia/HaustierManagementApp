@@ -12,18 +12,11 @@
 		B3570A532A16448600F9ED41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3570A522A16448600F9ED41 /* Assets.xcassets */; };
 		B3570A562A16448600F9ED41 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3570A552A16448600F9ED41 /* Preview Assets.xcassets */; };
 		B3570A582A16448600F9ED41 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3570A572A16448600F9ED41 /* Persistence.swift */; };
-		B3570A5B2A16448600F9ED41 /* HaustierApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3570A592A16448600F9ED41 /* HaustierApp.xcdatamodeld */; };
 		B3570A6C2A1BBC7700F9ED41 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */; };
 		B3BB75BF2A1D06B70049AD74 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */; };
-		B3BB75F62A1F81730049AD74 /* Food+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75E62A1F81730049AD74 /* Food+CoreDataClass.swift */; };
-		B3BB75F82A1F81730049AD74 /* Diagnosis+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75E82A1F81730049AD74 /* Diagnosis+CoreDataClass.swift */; };
-		B3BB75FA2A1F81730049AD74 /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75EA2A1F81730049AD74 /* Pet+CoreDataClass.swift */; };
-		B3BB75FB2A1F81730049AD74 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75EB2A1F81730049AD74 /* Pet+CoreDataProperties.swift */; };
-		B3BB75FC2A1F81730049AD74 /* PetData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75EC2A1F81730049AD74 /* PetData+CoreDataClass.swift */; };
-		B3BB75FE2A1F81730049AD74 /* Vaccine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75EE2A1F81730049AD74 /* Vaccine+CoreDataClass.swift */; };
-		B3BB76002A1F81730049AD74 /* Alarm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75F02A1F81730049AD74 /* Alarm+CoreDataClass.swift */; };
-		B3BB76022A1F81730049AD74 /* Medication+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75F22A1F81730049AD74 /* Medication+CoreDataClass.swift */; };
-		B3BB76042A1F81730049AD74 /* FoodIntolerance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75F42A1F81730049AD74 /* FoodIntolerance+CoreDataClass.swift */; };
+		B3C04AB12A1F8CA700D92831 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3C04AAF2A1F8CA700D92831 /* DataModel.xcdatamodeld */; };
+		B3C04ABC2A1F941600D92831 /* PetData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C04ABB2A1F941600D92831 /* PetData+CoreDataProperties.swift */; };
+		B3C04ABE2A1F944100D92831 /* PetData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C04ABD2A1F944100D92831 /* PetData+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,18 +26,11 @@
 		B3570A522A16448600F9ED41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3570A552A16448600F9ED41 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3570A572A16448600F9ED41 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		B3570A5A2A16448600F9ED41 /* HaustierApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HaustierApp.xcdatamodel; sourceTree = "<group>"; };
 		B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
-		B3BB75E62A1F81730049AD74 /* Food+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B3BB75E82A1F81730049AD74 /* Diagnosis+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diagnosis+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B3BB75EA2A1F81730049AD74 /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B3BB75EB2A1F81730049AD74 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B3BB75EC2A1F81730049AD74 /* PetData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B3BB75EE2A1F81730049AD74 /* Vaccine+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vaccine+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B3BB75F02A1F81730049AD74 /* Alarm+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B3BB75F22A1F81730049AD74 /* Medication+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Medication+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B3BB75F42A1F81730049AD74 /* FoodIntolerance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodIntolerance+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B3C04AB02A1F8CA700D92831 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		B3C04ABB2A1F941600D92831 /* PetData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PetData+CoreDataProperties.swift"; path = "HaustierApp/Model/PetData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B3C04ABD2A1F944100D92831 /* PetData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PetData+CoreDataClass.swift"; path = "HaustierApp/Model/PetData+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +47,7 @@
 		B3570A422A16448500F9ED41 = {
 			isa = PBXGroup;
 			children = (
+				B3C04AB62A1F8D5300D92831 /* Model */,
 				B3570A4D2A16448500F9ED41 /* HaustierApp */,
 				B3570A4C2A16448500F9ED41 /* Products */,
 			);
@@ -79,10 +66,9 @@
 			children = (
 				B3570A4E2A16448500F9ED41 /* HaustierAppApp.swift */,
 				B3570A6A2A1BB9DE00F9ED41 /* View */,
-				B3570A692A1BB9CE00F9ED41 /* Model */,
 				B3570A522A16448600F9ED41 /* Assets.xcassets */,
 				B3570A572A16448600F9ED41 /* Persistence.swift */,
-				B3570A592A16448600F9ED41 /* HaustierApp.xcdatamodeld */,
+				B3C04AAF2A1F8CA700D92831 /* DataModel.xcdatamodeld */,
 				B3570A542A16448600F9ED41 /* Preview Content */,
 			);
 			path = HaustierApp;
@@ -96,22 +82,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		B3570A692A1BB9CE00F9ED41 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B3BB75E62A1F81730049AD74 /* Food+CoreDataClass.swift */,
-				B3BB75E82A1F81730049AD74 /* Diagnosis+CoreDataClass.swift */,
-				B3BB75EA2A1F81730049AD74 /* Pet+CoreDataClass.swift */,
-				B3BB75EB2A1F81730049AD74 /* Pet+CoreDataProperties.swift */,
-				B3BB75EC2A1F81730049AD74 /* PetData+CoreDataClass.swift */,
-				B3BB75EE2A1F81730049AD74 /* Vaccine+CoreDataClass.swift */,
-				B3BB75F02A1F81730049AD74 /* Alarm+CoreDataClass.swift */,
-				B3BB75F22A1F81730049AD74 /* Medication+CoreDataClass.swift */,
-				B3BB75F42A1F81730049AD74 /* FoodIntolerance+CoreDataClass.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		B3570A6A2A1BB9DE00F9ED41 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +90,15 @@
 				B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B3C04AB62A1F8D5300D92831 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3C04ABD2A1F944100D92831 /* PetData+CoreDataClass.swift */,
+				B3C04ABB2A1F941600D92831 /* PetData+CoreDataProperties.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,21 +171,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3BB75F82A1F81730049AD74 /* Diagnosis+CoreDataClass.swift in Sources */,
-				B3BB75FA2A1F81730049AD74 /* Pet+CoreDataClass.swift in Sources */,
 				B3BB75BF2A1D06B70049AD74 /* SideMenuView.swift in Sources */,
 				B3570A582A16448600F9ED41 /* Persistence.swift in Sources */,
-				B3BB76002A1F81730049AD74 /* Alarm+CoreDataClass.swift in Sources */,
-				B3BB75FC2A1F81730049AD74 /* PetData+CoreDataClass.swift in Sources */,
-				B3BB75F62A1F81730049AD74 /* Food+CoreDataClass.swift in Sources */,
-				B3BB75FE2A1F81730049AD74 /* Vaccine+CoreDataClass.swift in Sources */,
-				B3BB76022A1F81730049AD74 /* Medication+CoreDataClass.swift in Sources */,
 				B3570A512A16448500F9ED41 /* ContentView.swift in Sources */,
-				B3BB76042A1F81730049AD74 /* FoodIntolerance+CoreDataClass.swift in Sources */,
-				B3570A5B2A16448600F9ED41 /* HaustierApp.xcdatamodeld in Sources */,
+				B3C04AB12A1F8CA700D92831 /* DataModel.xcdatamodeld in Sources */,
+				B3C04ABC2A1F941600D92831 /* PetData+CoreDataProperties.swift in Sources */,
+				B3C04ABE2A1F944100D92831 /* PetData+CoreDataClass.swift in Sources */,
 				B3570A6C2A1BBC7700F9ED41 /* Dashboard.swift in Sources */,
 				B3570A4F2A16448500F9ED41 /* HaustierAppApp.swift in Sources */,
-				B3BB75FB2A1F81730049AD74 /* Pet+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,13 +381,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B3570A592A16448600F9ED41 /* HaustierApp.xcdatamodeld */ = {
+		B3C04AAF2A1F8CA700D92831 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B3570A5A2A16448600F9ED41 /* HaustierApp.xcdatamodel */,
+				B3C04AB02A1F8CA700D92831 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = B3570A5A2A16448600F9ED41 /* HaustierApp.xcdatamodel */;
-			path = HaustierApp.xcdatamodeld;
+			currentVersion = B3C04AB02A1F8CA700D92831 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
