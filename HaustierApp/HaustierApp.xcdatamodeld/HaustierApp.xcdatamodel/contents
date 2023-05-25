@@ -39,7 +39,7 @@
         <relationship name="petData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PetData" inverseName="pet" inverseEntity="PetData"/>
         <relationship name="vaccines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vaccine" inverseName="pet" inverseEntity="Vaccine"/>
     </entity>
-    <entity name="PetData" representedClassName=".PetData" syncable="YES">
+    <entity name="PetData" representedClassName=".PetData" syncable="YES" codeGenerationType="category">
         <attribute name="breed" optional="YES" attributeType="String"/>
         <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="gender" optional="YES" attributeType="String"/>
