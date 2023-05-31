@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B34C25142A261A5500DB3C4E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C25132A261A5500DB3C4E /* ViewModel.swift */; };
+		B34C25172A2626DC00DB3C4E /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C25162A2626DC00DB3C4E /* NavigationBar.swift */; };
+		B34C251A2A262BB800DB3C4E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C25192A262BB800DB3C4E /* MainView.swift */; };
+		B34C251C2A26364A00DB3C4E /* PetProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C251B2A26364A00DB3C4E /* PetProfileButton.swift */; };
+		B34C251E2A263F0E00DB3C4E /* SlideInMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C251D2A263F0E00DB3C4E /* SlideInMenu.swift */; };
 		B3570A4F2A16448500F9ED41 /* HaustierAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3570A4E2A16448500F9ED41 /* HaustierAppApp.swift */; };
 		B3570A512A16448500F9ED41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3570A502A16448500F9ED41 /* ContentView.swift */; };
 		B3570A532A16448600F9ED41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3570A522A16448600F9ED41 /* Assets.xcassets */; };
 		B3570A562A16448600F9ED41 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3570A552A16448600F9ED41 /* Preview Assets.xcassets */; };
 		B3570A582A16448600F9ED41 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3570A572A16448600F9ED41 /* Persistence.swift */; };
 		B3570A6C2A1BBC7700F9ED41 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */; };
+		B35C8C072A20CAA5009CC296 /* ProfileOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35C8C062A20CAA5009CC296 /* ProfileOverview.swift */; };
+		B35C8C092A20CC4D009CC296 /* OverviewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35C8C082A20CC4D009CC296 /* OverviewTile.swift */; };
 		B3BB75BF2A1D06B70049AD74 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */; };
 		B3C04AB12A1F8CA700D92831 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3C04AAF2A1F8CA700D92831 /* DataModel.xcdatamodeld */; };
 		B3C04ACB2A1F98E700D92831 /* FoodIntolerance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C04ABF2A1F98E700D92831 /* FoodIntolerance+CoreDataClass.swift */; };
@@ -30,6 +37,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B34C25132A261A5500DB3C4E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B34C25162A2626DC00DB3C4E /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		B34C25192A262BB800DB3C4E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B34C251B2A26364A00DB3C4E /* PetProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileButton.swift; sourceTree = "<group>"; };
+		B34C251D2A263F0E00DB3C4E /* SlideInMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInMenu.swift; sourceTree = "<group>"; };
 		B3570A4B2A16448500F9ED41 /* HaustierApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaustierApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3570A4E2A16448500F9ED41 /* HaustierAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaustierAppApp.swift; sourceTree = "<group>"; };
 		B3570A502A16448500F9ED41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +49,8 @@
 		B3570A552A16448600F9ED41 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3570A572A16448600F9ED41 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		B35C8C062A20CAA5009CC296 /* ProfileOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOverview.swift; sourceTree = "<group>"; };
+		B35C8C082A20CC4D009CC296 /* OverviewTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTile.swift; sourceTree = "<group>"; };
 		B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		B3C04AB02A1F8CA700D92831 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		B3C04ABF2A1F98E700D92831 /* FoodIntolerance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FoodIntolerance+CoreDataClass.swift"; path = "HaustierApp/Model/FoodIntolerance+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -64,10 +78,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B34C25152A261A5A00DB3C4E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B34C25132A261A5500DB3C4E /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B34C25182A2626EA00DB3C4E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B34C25162A2626DC00DB3C4E /* NavigationBar.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		B3570A422A16448500F9ED41 = {
 			isa = PBXGroup;
 			children = (
-				B3C04AB62A1F8D5300D92831 /* Model */,
 				B3570A4D2A16448500F9ED41 /* HaustierApp */,
 				B3570A4C2A16448500F9ED41 /* Products */,
 			);
@@ -85,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				B3570A4E2A16448500F9ED41 /* HaustierAppApp.swift */,
+				B34C25152A261A5A00DB3C4E /* ViewModel */,
+				B3C04AB62A1F8D5300D92831 /* Model */,
 				B3570A6A2A1BB9DE00F9ED41 /* View */,
 				B3570A522A16448600F9ED41 /* Assets.xcassets */,
 				B3570A572A16448600F9ED41 /* Persistence.swift */,
@@ -105,11 +136,25 @@
 		B3570A6A2A1BB9DE00F9ED41 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B34C251D2A263F0E00DB3C4E /* SlideInMenu.swift */,
 				B3570A502A16448500F9ED41 /* ContentView.swift */,
-				B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */,
+				B34C25192A262BB800DB3C4E /* MainView.swift */,
+				B34C251B2A26364A00DB3C4E /* PetProfileButton.swift */,
+				B34C25182A2626EA00DB3C4E /* Navigation */,
 				B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */,
+				B3C04AD72A1F9B8B00D92831 /* SideMenu */,
+				B35C8C0A2A261991009CC296 /* Profile */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B35C8C0A2A261991009CC296 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B35C8C082A20CC4D009CC296 /* OverviewTile.swift */,
+				B35C8C062A20CAA5009CC296 /* ProfileOverview.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		B3C04AB62A1F8D5300D92831 /* Model */ = {
@@ -129,6 +174,15 @@
 				B3C04ACA2A1F98E700D92831 /* Food+CoreDataProperties.swift */,
 			);
 			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B3C04AD72A1F9B8B00D92831 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +260,7 @@
 				B3C04AD22A1F98E700D92831 /* Medication+CoreDataProperties.swift in Sources */,
 				B3C04ACB2A1F98E700D92831 /* FoodIntolerance+CoreDataClass.swift in Sources */,
 				B3C04ACC2A1F98E700D92831 /* FoodIntolerance+CoreDataProperties.swift in Sources */,
+				B34C25172A2626DC00DB3C4E /* NavigationBar.swift in Sources */,
 				B3C04AD12A1F98E700D92831 /* Medication+CoreDataClass.swift in Sources */,
 				B3C04AD52A1F98E700D92831 /* Food+CoreDataClass.swift in Sources */,
 				B3570A582A16448600F9ED41 /* Persistence.swift in Sources */,
@@ -214,11 +269,17 @@
 				B3C04AB12A1F8CA700D92831 /* DataModel.xcdatamodeld in Sources */,
 				B3570A6C2A1BBC7700F9ED41 /* Dashboard.swift in Sources */,
 				B3C04ACF2A1F98E700D92831 /* Diagnosis+CoreDataClass.swift in Sources */,
+				B34C25142A261A5500DB3C4E /* ViewModel.swift in Sources */,
 				B3C04AD02A1F98E700D92831 /* Diagnosis+CoreDataProperties.swift in Sources */,
+				B35C8C092A20CC4D009CC296 /* OverviewTile.swift in Sources */,
 				B3C04ACD2A1F98E700D92831 /* PetData+CoreDataClass.swift in Sources */,
 				B3C04AD42A1F98E700D92831 /* Vaccine+CoreDataProperties.swift in Sources */,
+				B34C251E2A263F0E00DB3C4E /* SlideInMenu.swift in Sources */,
+				B34C251A2A262BB800DB3C4E /* MainView.swift in Sources */,
 				B3570A4F2A16448500F9ED41 /* HaustierAppApp.swift in Sources */,
+				B35C8C072A20CAA5009CC296 /* ProfileOverview.swift in Sources */,
 				B3C04AD62A1F98E700D92831 /* Food+CoreDataProperties.swift in Sources */,
+				B34C251C2A26364A00DB3C4E /* PetProfileButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
