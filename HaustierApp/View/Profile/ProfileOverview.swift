@@ -15,25 +15,18 @@ struct ProfileOverview: View {
     }
     
     var body: some View{
-        VStack {
-            OverviewTile(petAttribute: "petData")
-            Spacer()
-            OverviewTile(petAttribute: "food")
-            Spacer()
-            OverviewTile(petAttribute: "diagnosis")
-            Spacer()
-            OverviewTile(petAttribute: "medication")
-            Spacer()
-            OverviewTile(petAttribute: "vaccine")
+        NavigationView {
+            ScrollView {
+                OverviewTile(petAttribute: "Pet Data")
+            }
+            .navigationBarTitle("Overview", displayMode: .inline)
         }
-        .padding(.vertical, 50)
-        .navigationTitle("PetData")
     }
     
 }
 
 struct ProfileOverview_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ProfileOverview()
     }
 }

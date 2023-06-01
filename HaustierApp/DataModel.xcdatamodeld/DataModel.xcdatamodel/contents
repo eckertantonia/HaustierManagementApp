@@ -28,8 +28,7 @@
     </entity>
     <entity name="PetData" representedClassName="PetData" syncable="YES">
         <attribute name="dateOfBirth" optional="YES" attributeType="Date" defaultDateTimeInterval="706798740" usesScalarValueType="NO"/>
-        <attribute name="genderFemale" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="genderMale" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
         <attribute name="petBreed" optional="YES" attributeType="String"/>
         <attribute name="petHeight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="petName" optional="YES" attributeType="String"/>

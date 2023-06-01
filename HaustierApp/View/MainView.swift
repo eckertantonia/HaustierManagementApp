@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct MainView: View {
+    // !ViewModel
     @State var showMenu:Bool = false
-    @State var linkBool:Bool = true
+    @State private var date = Date()
     
     // switch out for petlist
-    var protoText: [String] = ["Bello"]
+    var helpList: [String] = ["Bello"]
     var body: some View {
         NavigationStack {
             ZStack{
                 VStack{
-                    Text("Dashboard")
+                    //Text("Dashboard")
+                    DatePicker(
+                        "Start Date",
+                        selection: $date,
+                        displayedComponents: [.date]
+                    )
+                    .datePickerStyle(.graphical)
                     
                     
                 }
@@ -25,15 +32,8 @@ struct MainView: View {
                 //Navigation
                 GeometryReader{ _ in
                     VStack{
-                        ZStack{
-                            HStack {
-                                
-                                
-                                
-                            }
-                        }
                         //Slide In Menu
-                        SlideInMenu(protoText: protoText)
+                        SlideInMenu(protoText: helpList)
                             .offset(x: showMenu ? UIScreen.main.bounds.width/8: UIScreen.main.bounds.width,
                                     y: -UIScreen.main.bounds.height/19)
                             .animation(.easeInOut(duration: 0.3), value: showMenu)

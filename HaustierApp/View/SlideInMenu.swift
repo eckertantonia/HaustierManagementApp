@@ -21,7 +21,7 @@ struct SlideInMenu: View {
                     }
                     
                     // newPet Button
-                    PetProfileButton(image: "plus.circle", title: "new Pet")
+                    CreatePetButton()
                     
                     
                     }
@@ -37,6 +37,6 @@ struct SlideInMenu: View {
 
 struct SlideInMenu_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+       SlideInMenu(protoText: ["pawprint"])
     }
 }
