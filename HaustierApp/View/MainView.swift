@@ -11,9 +11,10 @@ struct MainView: View {
     // !ViewModel
     @State var showMenu:Bool = false
     @State private var date = Date()
-    
-    // switch out for petlist
+
+    // switch out for petlist ViewModel
     var helpList: [String] = ["Bello"]
+    
     var body: some View {
         NavigationStack {
             ZStack{
