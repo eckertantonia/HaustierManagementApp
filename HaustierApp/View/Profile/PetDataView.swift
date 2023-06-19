@@ -10,6 +10,7 @@ import SwiftUI
 // mit ViewModel arbeiten
 
 struct PetDataView: View {
+    @StateObject var petData = PetList()
     var body: some View {
         NavigationView {
             Text("Pet Data")
@@ -26,6 +27,6 @@ struct PetDataView: View {
 
 struct PetDataView_Previews: PreviewProvider {
     static var previews: some View {
-        PetDataView()
+        PetDataView(petData: PetList())
     }
 }

@@ -9,11 +9,17 @@ import Foundation
 import SwiftUI
 
 class PetList: ObservableObject {
+    @Environment(\.managedObjectContext) var managedObjectContext
     
-    var petList = [PetData]()
+    // get all pets from Core Data Container
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.petName)
+    ]) var pets: FetchedResults<PetData>
     
-    func addPet() {
-        //append new PetData to petList
+    func addPet(petName:String) {
+        let newPet = PetData(context: managedObjectContext)
+        newPet.petName = petName
+        PersistenceController.shared.save()
     }
     
 }

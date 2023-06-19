@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct SlideInMenu: View {
-        var protoText: [String]
+    
         var body: some View {
             
             ScrollView(.horizontal) {
                 HStack{
-                    ForEach(protoText, id: \.self){ proto in
+                    ForEach(CoreDataAccess.coreDataAccess.fetchPets(), id: \.self){ pet in
                         
                         NavigationLink(destination: Text("probe")){
-                            PetProfileButton(image: "pawprint.fill", title: proto)
+                            PetProfileButton(image: "pawprint.fill", title: pet.petName ?? "default")
                         }
                     }
                     
@@ -37,6 +37,6 @@ struct SlideInMenu: View {
 
 struct SlideInMenu_Previews: PreviewProvider {
     static var previews: some View {
-       SlideInMenu(protoText: ["pawprint"])
+        SlideInMenu()
     }
 }

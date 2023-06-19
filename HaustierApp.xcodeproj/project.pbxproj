@@ -37,6 +37,8 @@
 		B3C04AD42A1F98E700D92831 /* Vaccine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C04AC82A1F98E700D92831 /* Vaccine+CoreDataProperties.swift */; };
 		B3C04AD52A1F98E700D92831 /* Food+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C04AC92A1F98E700D92831 /* Food+CoreDataClass.swift */; };
 		B3C04AD62A1F98E700D92831 /* Food+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C04ACA2A1F98E700D92831 /* Food+CoreDataProperties.swift */; };
+		B3F5B0392A372CD90072E890 /* Ausprobieren.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F5B0382A372CD90072E890 /* Ausprobieren.swift */; };
+		B3F5B03B2A373B0A0072E890 /* CoreDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F5B03A2A373B0A0072E890 /* CoreDataAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		B3C04AC82A1F98E700D92831 /* Vaccine+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Vaccine+CoreDataProperties.swift"; path = "HaustierApp/Model/Vaccine+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B3C04AC92A1F98E700D92831 /* Food+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Food+CoreDataClass.swift"; path = "HaustierApp/Model/Food+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B3C04ACA2A1F98E700D92831 /* Food+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Food+CoreDataProperties.swift"; path = "HaustierApp/Model/Food+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B3F5B0382A372CD90072E890 /* Ausprobieren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ausprobieren.swift; sourceTree = "<group>"; };
+		B3F5B03A2A373B0A0072E890 /* CoreDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				B34C25132A261A5500DB3C4E /* ViewModel.swift */,
+				B3F5B03A2A373B0A0072E890 /* CoreDataAccess.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				B3570A4E2A16448500F9ED41 /* HaustierAppApp.swift */,
+				B3570A502A16448500F9ED41 /* ContentView.swift */,
 				B34C25152A261A5A00DB3C4E /* ViewModel */,
 				B3C04AB62A1F8D5300D92831 /* Model */,
 				B3570A6A2A1BB9DE00F9ED41 /* View */,
@@ -144,8 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				B34C251D2A263F0E00DB3C4E /* SlideInMenu.swift */,
-				B3570A502A16448500F9ED41 /* ContentView.swift */,
 				B34C25192A262BB800DB3C4E /* MainView.swift */,
+				B3F5B0382A372CD90072E890 /* Ausprobieren.swift */,
 				B34C251B2A26364A00DB3C4E /* PetProfileButton.swift */,
 				B34C25182A2626EA00DB3C4E /* Navigation */,
 				B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */,
@@ -275,8 +281,10 @@
 				B3C04AD52A1F98E700D92831 /* Food+CoreDataClass.swift in Sources */,
 				B3570A582A16448600F9ED41 /* Persistence.swift in Sources */,
 				B3C04AD32A1F98E700D92831 /* Vaccine+CoreDataClass.swift in Sources */,
+				B3F5B0392A372CD90072E890 /* Ausprobieren.swift in Sources */,
 				B3570A512A16448500F9ED41 /* ContentView.swift in Sources */,
 				B3C04AB12A1F8CA700D92831 /* DataModel.xcdatamodeld in Sources */,
+				B3F5B03B2A373B0A0072E890 /* CoreDataAccess.swift in Sources */,
 				B34C25262A28DC4C00DB3C4E /* PetDataView.swift in Sources */,
 				B3570A6C2A1BBC7700F9ED41 /* Dashboard.swift in Sources */,
 				B3C04ACF2A1F98E700D92831 /* Diagnosis+CoreDataClass.swift in Sources */,

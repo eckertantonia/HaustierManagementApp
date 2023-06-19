@@ -13,7 +13,7 @@ struct MainView: View {
     @State private var date = Date()
 
     // switch out for petlist ViewModel
-    var helpList: [String] = ["Bello"]
+    //@StateObject var petList = PetList()
     
     var body: some View {
         NavigationStack {
@@ -34,7 +34,7 @@ struct MainView: View {
                 GeometryReader{ _ in
                     VStack{
                         //Slide In Menu
-                        SlideInMenu(protoText: helpList)
+                        SlideInMenu()
                             .offset(x: showMenu ? UIScreen.main.bounds.width/8: UIScreen.main.bounds.width,
                                     y: -UIScreen.main.bounds.height/19)
                             .animation(.easeInOut(duration: 0.3), value: showMenu)

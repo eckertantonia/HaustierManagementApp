@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct CreatePetButton: View {
+    
     var body: some View {
-        NavigationLink(destination: PetDataView()){
+        NavigationLink(destination: PetDataInputView()){
             VStack{
                 // Pic
                 Image(systemName: "plus.circle")

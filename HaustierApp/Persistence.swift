@@ -8,14 +8,23 @@
 import CoreData
 
 struct PersistenceController {
+    // A singleton for our entire app to use
     static let shared = PersistenceController()
+    
+    // Storage for Core Data
+    let container: NSPersistentContainer
 
+    // A test configuration for SwiftUI previews
     static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
+        let previewController = PersistenceController(inMemory: true)
+        let viewContext = previewController.container.viewContext
+        // Create 10 example PetData
         for _ in 0..<10 {
-            let newItem = PetData(context: viewContext)
+            let newPet = PetData(context: viewContext)
+            newPet.petName = "Paul"
+            newPet.gender = "male"
         }
+        
         do {
             try viewContext.save()
         } catch {
@@ -24,16 +33,18 @@ struct PersistenceController {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
-        return result
+        return previewController
     }()
 
-    let container: NSPersistentContainer
-
+    // An initializer to load Core Data, optionally able to use an in-memory store
     init(inMemory: Bool = false) {
+        // name is Data Model name (mine is called DataModel)
         container = NSPersistentContainer(name: "DataModel")
+        
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -51,5 +62,18 @@ struct PersistenceController {
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
+    }
+    
+    func save() {
+        let context = container.viewContext
+        
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                // Show some error here
+                print("context save error: \(error.localizedDescription)")
+            }
+        }
     }
 }

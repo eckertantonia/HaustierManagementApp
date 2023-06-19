@@ -10,9 +10,13 @@ import CoreData
 
 struct ContentView: View {
     
+    //@Environment(\.managedObjectContext) var managedObjectContext
+    
+    
     //MARK: - ViewBody
     var body: some View {
-            MainView()
+        MainView(showMenu: false)
+//        Ausprobieren()
         }
     }
     

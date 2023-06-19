@@ -11,6 +11,7 @@ struct PetDataInputView: View {
     //TODO in ViewModel auslagern
     @Environment(\.managedObjectContext) var moc
     @State private var petName: String = ""
+    @StateObject var petList = PetList()
     
     var body: some View {
         NavigationView {
@@ -21,16 +22,18 @@ struct PetDataInputView: View {
                     
                 }
                 Button("Save"){
-                    let petData = PetData(context: moc)
-                    petData.petName = self.petName
-                    
-                    do {
-                        try self.moc.save()
-                        print("\(petData)")
-                        
-                    } catch {
-                        print("error \(error.localizedDescription)")
-                    }
+                    //petList.addPet(petName: self.petName)
+                    //print(petList.petList)
+//                    let petData = PetData(context: moc)
+//                    petData.petName = self.petName
+//
+//                    do {
+//                        try self.moc.save()
+//                        print("\(petData)")
+//                        
+//                    } catch {
+//                        print("error \(error.localizedDescription)")
+//                    }
                 }
             }
             
