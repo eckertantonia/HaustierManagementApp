@@ -12,15 +12,16 @@ import CoreData
 
 extension PetData {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<PetData> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<PetData> {
         return NSFetchRequest<PetData>(entityName: "PetData")
     }
 
+    // change to non-optional later
     @NSManaged public var dateOfBirth: Date?
     @NSManaged public var gender: String?
     @NSManaged public var petBreed: String?
     @NSManaged public var petHeight: Double
-    @NSManaged public var petName: String?
+    @NSManaged public var petName: String
     @NSManaged public var petWeight: Double
     @NSManaged public var placeOfOrigin: String?
     @NSManaged public var diagnosis: NSSet?

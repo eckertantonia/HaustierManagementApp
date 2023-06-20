@@ -12,7 +12,7 @@ import CoreData
 
 extension Vaccine {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Vaccine> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<Vaccine> {
         return NSFetchRequest<Vaccine>(entityName: "Vaccine")
     }
 

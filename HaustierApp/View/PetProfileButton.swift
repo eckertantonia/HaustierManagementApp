@@ -13,9 +13,10 @@ struct PetProfileButton: View {
     // image aus petData (noch nicht im Datenmodell)
     var image: String = "pawprint"
     var title: String = "name"
+    var pet: PetData
     
     var body: some View {
-        NavigationLink(destination: ProfileOverview()){
+        NavigationLink(destination: ProfileOverview(pet: pet)){
             VStack{
                 // Pic
                 Image(systemName: image)

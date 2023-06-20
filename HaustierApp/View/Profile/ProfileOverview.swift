@@ -9,17 +9,23 @@ import SwiftUI
 
 struct ProfileOverview: View {
     
+    var pet: PetData
     
-    init(){
-        UITabBar.appearance().isHidden = true
+    init(pet: PetData) {
+        self.pet = pet
     }
+    
+    
+//    init(){
+//        UITabBar.appearance().isHidden = true
+//    }
     
     var body: some View{
         NavigationView {
             ScrollView {
                 OverviewTile(petAttribute: "Pet Data")
             }
-            .navigationBarTitle("Overview", displayMode: .inline)
+            .navigationBarTitle(pet.petName, displayMode: .inline)
         }
     }
     
@@ -27,6 +33,6 @@ struct ProfileOverview: View {
 
 struct ProfileOverview_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileOverview()
+        ProfileOverview(pet: PetData())
     }
 }

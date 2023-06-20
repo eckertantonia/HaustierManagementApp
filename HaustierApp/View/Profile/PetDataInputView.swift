@@ -9,35 +9,30 @@ import SwiftUI
 
 struct PetDataInputView: View {
     //TODO in ViewModel auslagern
-    @Environment(\.managedObjectContext) var moc
+    @Environment(\.managedObjectContext) var context
     @State private var petName: String = ""
-    @StateObject var petList = PetList()
-    
+    @State private var petGender: String = ""
+//    var petDataVM = PetDataViewModel(context: moc)
+
     var body: some View {
         NavigationView {
             Form{
                 Section{
                     TextField("Pet Name", text: $petName)
                         .disableAutocorrection(true)
+                    VStack{
+                        Text("Gender")
+                        RadioButtonGroups{ selected in
+                            petGender = selected
+                        }
+                    }
                     
                 }
                 Button("Save"){
-                    //petList.addPet(petName: self.petName)
-                    //print(petList.petList)
-//                    let petData = PetData(context: moc)
-//                    petData.petName = self.petName
-//
-//                    do {
-//                        try self.moc.save()
-//                        print("\(petData)")
-//                        
-//                    } catch {
-//                        print("error \(error.localizedDescription)")
-//                    }
+                       PetDataViewModel(context: context).savePetData(name: petName, gender: petGender)
                 }
             }
-            
-                .navigationBarTitle("Edit Pet Data", displayMode: .inline)
+            .navigationBarTitle("Edit Pet Data", displayMode: .inline)
         }
     }
 }

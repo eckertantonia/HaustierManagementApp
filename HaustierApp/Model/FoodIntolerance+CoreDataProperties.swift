@@ -12,7 +12,7 @@ import CoreData
 
 extension FoodIntolerance {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<FoodIntolerance> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<FoodIntolerance> {
         return NSFetchRequest<FoodIntolerance>(entityName: "FoodIntolerance")
     }
 

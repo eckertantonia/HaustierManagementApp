@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct SlideInMenu: View {
+    @Environment(\.managedObjectContext) var moc
+    
+    @State var pets = [PetData]()
+   
+    
     
         var body: some View {
             
             ScrollView(.horizontal) {
                 HStack{
-                    ForEach(CoreDataAccess.coreDataAccess.fetchPets(), id: \.self){ pet in
-                        
-                        NavigationLink(destination: Text("probe")){
-                            PetProfileButton(image: "pawprint.fill", title: pet.petName ?? "default")
-                        }
+                    ForEach(pets, id: \.self){ pet in
+                        PetProfileButton(image: "pawprint.fill", title: pet.petName, pet: pet )
                     }
                     
                     // newPet Button
@@ -31,6 +33,9 @@ struct SlideInMenu: View {
             //.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/5, alignment: .center)
             .background(.white)
             .padding(32)
+            .onAppear{
+                pets = CoreDataController(context: moc).loadSavedData()
+            }
         }
     }
 
