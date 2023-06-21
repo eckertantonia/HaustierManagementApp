@@ -36,7 +36,7 @@ struct MainView: View {
                         //Slide In Menu
                         SlideInMenu()
                             .offset(x: showMenu ? UIScreen.main.bounds.width/8: UIScreen.main.bounds.width,
-                                    y: -UIScreen.main.bounds.height/19)
+                                    y: -UIScreen.main.bounds.height/30)
                             .animation(.easeInOut(duration: 0.3), value: showMenu)
                         
                     }
@@ -53,6 +53,7 @@ struct MainView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 40, height: 40)
+                        .padding(.top, 10)
                     })
             }
                 
@@ -63,7 +64,7 @@ struct MainView: View {
     
     struct MainView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            MainView()
         }
     }
 }

@@ -18,12 +18,20 @@ class PetDataViewModel {
         self.coreDataController = CoreDataController(context: context)
     }
     
-    func savePetData(name: String, gender: String){
+    func savePetData(name: String,dateOfBirth: Date, gender: String, breed: String, origin: String, weight: String, height: String ){
         if coreDataController.checkIfNameExists(name: name){
             let pet = PetData(context: context)
-                    pet.petName = name
-                    pet.gender = gender
-                    PersistenceController.shared.save() // saving after creating new object to save to Persistence Container
+            pet.petName = name
+            pet.dateOfBirth = dateOfBirth
+            pet.gender = gender
+            pet.petBreed = breed
+            pet.placeOfOrigin = origin
+            // default value if input was nil
+            pet.petWeight = Double(weight) ?? 0
+            pet.petHeight = Double(height) ?? 0
+            
+            PersistenceController.shared.save() // saving after creating new object to save to Persistence Container
+            print("saved pet: \n \(pet)")
         } else {
             print("Pet already exists")
         }

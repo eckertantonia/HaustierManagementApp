@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30FC0392A4321BE002A1B26 /* ProfileViewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FC0382A4321BE002A1B26 /* ProfileViewTile.swift */; };
+		B30FC03B2A43251C002A1B26 /* ProfileViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FC03A2A43251C002A1B26 /* ProfileViewVM.swift */; };
 		B34C25142A261A5500DB3C4E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C25132A261A5500DB3C4E /* ViewModel.swift */; };
 		B34C25172A2626DC00DB3C4E /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C25162A2626DC00DB3C4E /* NavigationBar.swift */; };
 		B34C251A2A262BB800DB3C4E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C25192A262BB800DB3C4E /* MainView.swift */; };
@@ -46,9 +48,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B30FC0382A4321BE002A1B26 /* ProfileViewTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTile.swift; sourceTree = "<group>"; };
+		B30FC03A2A43251C002A1B26 /* ProfileViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewVM.swift; sourceTree = "<group>"; };
 		B34C25132A261A5500DB3C4E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B34C25162A2626DC00DB3C4E /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
-		B34C25192A262BB800DB3C4E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B34C25192A262BB800DB3C4E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		B34C251B2A26364A00DB3C4E /* PetProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileButton.swift; sourceTree = "<group>"; };
 		B34C251D2A263F0E00DB3C4E /* SlideInMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInMenu.swift; sourceTree = "<group>"; };
 		B34C25252A28DC4C00DB3C4E /* PetDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDataView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			children = (
 				B3B1ADC22A41B132006F12F1 /* CoreDataController.swift */,
 				B3B1ADC52A41C6C6006F12F1 /* PetDataViewModel.swift */,
+				B30FC03A2A43251C002A1B26 /* ProfileViewVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				B35C8C062A20CAA5009CC296 /* ProfileOverview.swift */,
 				B34C25252A28DC4C00DB3C4E /* PetDataView.swift */,
 				B34C25292A28DED700DB3C4E /* PetDataInputView.swift */,
+				B30FC0382A4321BE002A1B26 /* ProfileViewTile.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B30FC0392A4321BE002A1B26 /* ProfileViewTile.swift in Sources */,
 				B3B1ADC92A41CF74006F12F1 /* RadioButton.swift in Sources */,
 				B3B1ADC62A41C6C6006F12F1 /* PetDataViewModel.swift in Sources */,
 				B3C04ACE2A1F98E700D92831 /* PetData+CoreDataProperties.swift in Sources */,
@@ -314,6 +321,7 @@
 				B3F5B0392A372CD90072E890 /* Ausprobieren.swift in Sources */,
 				B3B1ADC32A41B132006F12F1 /* CoreDataController.swift in Sources */,
 				B3570A512A16448500F9ED41 /* ContentView.swift in Sources */,
+				B30FC03B2A43251C002A1B26 /* ProfileViewVM.swift in Sources */,
 				B3C04AB12A1F8CA700D92831 /* DataModel.xcdatamodeld in Sources */,
 				B3F5B03B2A373B0A0072E890 /* CoreDataAccess.swift in Sources */,
 				B34C25262A28DC4C00DB3C4E /* PetDataView.swift in Sources */,

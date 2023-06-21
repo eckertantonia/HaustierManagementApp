@@ -20,7 +20,7 @@ struct CreatePetButton: View {
                     .cornerRadius(10)
                 //Padding top for Top Close Button
                     //.padding(.top, 50)
-                Text("add")
+                Text("neu")
                     .font(.title3)
                     .padding(.top)
                 

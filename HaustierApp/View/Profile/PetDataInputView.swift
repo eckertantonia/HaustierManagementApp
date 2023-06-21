@@ -37,18 +37,18 @@ struct PetDataInputView: View {
                     }
                     TextField("Rasse", text: $petBreed)
                         .disableAutocorrection(true)
+                    TextField("Herkunft", text: $petOrigin)
+                        .disableAutocorrection(true)
                     TextField("Gewicht", text: $petWeight)
                         .keyboardType(.decimalPad)
                     TextField("Größe", text: $petHeight)
                         .keyboardType(.decimalPad)
-                    
-                    
                 }
                 Button("Save"){
-                       PetDataViewModel(context: context).savePetData(name: petName, gender: petGender)
+                    PetDataViewModel(context: context).savePetData(name: petName, dateOfBirth: petBirthDate, gender: petGender, breed: petBreed, origin: petOrigin, weight: petWeight, height: petHeight)
                 }
             }
-            .navigationBarTitle("Edit Pet Data", displayMode: .inline)
+            .navigationBarTitle("Tierdaten ändern", displayMode: .inline)
         }
     }
 }

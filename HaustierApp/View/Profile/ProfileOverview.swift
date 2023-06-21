@@ -10,9 +10,13 @@ import SwiftUI
 struct ProfileOverview: View {
     
     var pet: PetData
+    let profileViewVM: ProfileViewVM
+    let tileTitleList: [String]
     
     init(pet: PetData) {
         self.pet = pet
+        self.tileTitleList = ["Tierdaten", "Futter", "Diagnosen", "Medikamente", "Impfungen"]
+        self.profileViewVM = ProfileViewVM(pet: pet, tiles: tileTitleList)
     }
     
     
@@ -23,9 +27,13 @@ struct ProfileOverview: View {
     var body: some View{
         NavigationView {
             ScrollView {
-                OverviewTile(petAttribute: "Pet Data")
+                ForEach(tileTitleList, id: \.self){ title in
+                    ProfileViewTile(tileDetails: profileViewVM.tileDetails(tileTitle: title))
+                }
+            
             }
             .navigationBarTitle(pet.petName, displayMode: .inline)
+            
         }
     }
     
