@@ -31,7 +31,7 @@ struct SlideInMenu: View {
                 
             }
             //.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/5, alignment: .center)
-            .background(.white)
+            .background()
             .opacity(1) // TODO when Colors are chosen
             .padding(32)
             .onAppear{

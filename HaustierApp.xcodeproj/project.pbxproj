@@ -110,15 +110,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		B34C25182A2626EA00DB3C4E /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				B34C25162A2626DC00DB3C4E /* NavigationBar.swift */,
-				B34C25272A28DDE000DB3C4E /* CreatePetButton.swift */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
 		B3570A422A16448500F9ED41 = {
 			isa = PBXGroup;
 			children = (
@@ -167,8 +158,6 @@
 				B34C251D2A263F0E00DB3C4E /* SlideInMenu.swift */,
 				B34C25192A262BB800DB3C4E /* MainView.swift */,
 				B3F5B0382A372CD90072E890 /* Ausprobieren.swift */,
-				B34C251B2A26364A00DB3C4E /* PetProfileButton.swift */,
-				B34C25182A2626EA00DB3C4E /* Navigation */,
 				B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */,
 				B3C04AD72A1F9B8B00D92831 /* SideMenu */,
 				B35C8C0A2A261991009CC296 /* Profile */,
@@ -179,7 +168,6 @@
 		B35C8C0A2A261991009CC296 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				B35C8C082A20CC4D009CC296 /* OverviewTile.swift */,
 				B35C8C062A20CAA5009CC296 /* ProfileOverview.swift */,
 				B34C25252A28DC4C00DB3C4E /* PetDataView.swift */,
 				B34C25292A28DED700DB3C4E /* PetDataInputView.swift */,
@@ -191,6 +179,8 @@
 		B3B1ADC42A41C650006F12F1 /* DeleteLater */ = {
 			isa = PBXGroup;
 			children = (
+				B35C8C082A20CC4D009CC296 /* OverviewTile.swift */,
+				B34C25162A2626DC00DB3C4E /* NavigationBar.swift */,
 				B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */,
 				B37C34972A42FFF6004B75A2 /* RadioButtonGroup.swift */,
 				B34C25132A261A5500DB3C4E /* ViewModel.swift */,
@@ -229,6 +219,8 @@
 		B3C04AD72A1F9B8B00D92831 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				B34C25272A28DDE000DB3C4E /* CreatePetButton.swift */,
+				B34C251B2A26364A00DB3C4E /* PetProfileButton.swift */,
 				B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */,
 			);
 			path = SideMenu;

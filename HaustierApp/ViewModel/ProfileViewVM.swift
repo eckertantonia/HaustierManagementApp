@@ -22,6 +22,7 @@ class ProfileViewVM {
         
         switch tileTitle{
         case tiles[0]:
+            // Tierdaten
             // add Tile Title
             tileDetails.append(tiles[0])
             // add Details
@@ -35,17 +36,25 @@ class ProfileViewVM {
                 tileDetails.append(String(petAge)+" Jahr(e) alt")
             }
         case tiles[1]:
+            // Futter
             // add Tile Title
             tileDetails.append(tiles[1])
+            // TODO
         case tiles[2]:
+            //Diagnose
             // add Tile Title
             tileDetails.append(tiles[2])
+            // TODO
         case tiles[3]:
+            // Medikamente
             // add Tile Title
             tileDetails.append(tiles[3])
+            //TODO
         case tiles[4]:
+            // Impfungen
             // add Tile Title
             tileDetails.append(tiles[4])
+            // TODO
         default:
             break
         }

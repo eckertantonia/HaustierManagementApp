@@ -22,7 +22,7 @@ struct PetDataInputView: View {
 //    var petDataVM = PetDataViewModel(context: moc)
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form{
                 Section{
                     TextField("Name", text: $petName)
@@ -44,9 +44,17 @@ struct PetDataInputView: View {
                     TextField("Größe", text: $petHeight)
                         .keyboardType(.decimalPad)
                 }
+              
                 Button("Save"){
                     PetDataViewModel(context: context).savePetData(name: petName, dateOfBirth: petBirthDate, gender: petGender, breed: petBreed, origin: petOrigin, weight: petWeight, height: petHeight)
                 }
+//                NavigationLink(destination: PetDataView()){
+//                    Text("Save")
+//                }
+//                    .simultaneousGesture(TapGesture().onEnded({
+//                        PetDataViewModel(context: context).savePetData(name: petName, dateOfBirth: petBirthDate, gender: petGender, breed: petBreed, origin: petOrigin, weight: petWeight, height: petHeight)
+//                        print("funktionier endlich!")
+//                    }))
             }
             .navigationBarTitle("Tierdaten ändern", displayMode: .inline)
         }
