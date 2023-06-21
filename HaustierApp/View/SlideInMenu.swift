@@ -31,7 +31,7 @@ struct SlideInMenu: View {
                 
             }
             //.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/5, alignment: .center)
-            .background(.white)
+//            .background(.white)
             .padding(32)
             .onAppear{
                 pets = CoreDataController(context: moc).loadSavedData()

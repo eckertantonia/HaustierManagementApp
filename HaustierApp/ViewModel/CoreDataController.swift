@@ -67,6 +67,17 @@ class CoreDataController:NSObject, NSFetchedResultsControllerDelegate {
         return pets
     }
     
+    func checkIfNameExists(name: String) -> Bool {
+//        print(pets)
+        for pet in loadSavedData() {
+            print("cur pet \(pet.petName) -> \(name)")
+            if pet.petName == name{
+                return false
+            }
+        }
+        
+        return true
+    }
 //    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?){
 //        switch type {
 //        case .update:

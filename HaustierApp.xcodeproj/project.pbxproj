@@ -23,6 +23,7 @@
 		B3570A6C2A1BBC7700F9ED41 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */; };
 		B35C8C072A20CAA5009CC296 /* ProfileOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35C8C062A20CAA5009CC296 /* ProfileOverview.swift */; };
 		B35C8C092A20CC4D009CC296 /* OverviewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35C8C082A20CC4D009CC296 /* OverviewTile.swift */; };
+		B37C34982A42FFF6004B75A2 /* RadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C34972A42FFF6004B75A2 /* RadioButtonGroup.swift */; };
 		B3B1ADC32A41B132006F12F1 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC22A41B132006F12F1 /* CoreDataController.swift */; };
 		B3B1ADC62A41C6C6006F12F1 /* PetDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC52A41C6C6006F12F1 /* PetDataViewModel.swift */; };
 		B3B1ADC92A41CF74006F12F1 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */; };
@@ -62,6 +63,7 @@
 		B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		B35C8C062A20CAA5009CC296 /* ProfileOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOverview.swift; sourceTree = "<group>"; };
 		B35C8C082A20CC4D009CC296 /* OverviewTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTile.swift; sourceTree = "<group>"; };
+		B37C34972A42FFF6004B75A2 /* RadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonGroup.swift; sourceTree = "<group>"; };
 		B3B1ADC22A41B132006F12F1 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		B3B1ADC52A41C6C6006F12F1 /* PetDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDataViewModel.swift; sourceTree = "<group>"; };
 		B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
@@ -183,6 +185,8 @@
 		B3B1ADC42A41C650006F12F1 /* DeleteLater */ = {
 			isa = PBXGroup;
 			children = (
+				B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */,
+				B37C34972A42FFF6004B75A2 /* RadioButtonGroup.swift */,
 				B34C25132A261A5500DB3C4E /* ViewModel.swift */,
 				B3F5B03A2A373B0A0072E890 /* CoreDataAccess.swift */,
 			);
@@ -192,7 +196,6 @@
 		B3B1ADC72A41CF60006F12F1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				B3C04AB12A1F8CA700D92831 /* DataModel.xcdatamodeld in Sources */,
 				B3F5B03B2A373B0A0072E890 /* CoreDataAccess.swift in Sources */,
 				B34C25262A28DC4C00DB3C4E /* PetDataView.swift in Sources */,
+				B37C34982A42FFF6004B75A2 /* RadioButtonGroup.swift in Sources */,
 				B3570A6C2A1BBC7700F9ED41 /* Dashboard.swift in Sources */,
 				B3C04ACF2A1F98E700D92831 /* Diagnosis+CoreDataClass.swift in Sources */,
 				B34C25142A261A5500DB3C4E /* ViewModel.swift in Sources */,
