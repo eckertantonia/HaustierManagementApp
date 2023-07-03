@@ -16,7 +16,7 @@ struct PetDataView: View {
             Text("Pet Data")
                 .navigationBarTitle("PetData", displayMode: .inline)
                 .toolbar{
-                    NavigationLink(destination: PetDataInputView()){
+                    NavigationLink(destination: PetDataInputView(vm: PetDataInputViewModel(context: PersistenceManager.shared.container.viewContext))){
                         Text("Edit")
                     }
                 }

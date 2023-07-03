@@ -26,8 +26,7 @@
 		B35C8C072A20CAA5009CC296 /* ProfileOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35C8C062A20CAA5009CC296 /* ProfileOverview.swift */; };
 		B35C8C092A20CC4D009CC296 /* OverviewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35C8C082A20CC4D009CC296 /* OverviewTile.swift */; };
 		B37C34982A42FFF6004B75A2 /* RadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C34972A42FFF6004B75A2 /* RadioButtonGroup.swift */; };
-		B3B1ADC32A41B132006F12F1 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC22A41B132006F12F1 /* CoreDataController.swift */; };
-		B3B1ADC62A41C6C6006F12F1 /* PetDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC52A41C6C6006F12F1 /* PetDataViewModel.swift */; };
+		B3B1ADC32A41B132006F12F1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC22A41B132006F12F1 /* CoreDataService.swift */; };
 		B3B1ADC92A41CF74006F12F1 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */; };
 		B3BB75BF2A1D06B70049AD74 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */; };
 		B3C04AB12A1F8CA700D92831 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3C04AAF2A1F8CA700D92831 /* DataModel.xcdatamodeld */; };
@@ -43,6 +42,10 @@
 		B3C04AD42A1F98E700D92831 /* Vaccine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C04AC82A1F98E700D92831 /* Vaccine+CoreDataProperties.swift */; };
 		B3C04AD52A1F98E700D92831 /* Food+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C04AC92A1F98E700D92831 /* Food+CoreDataClass.swift */; };
 		B3C04AD62A1F98E700D92831 /* Food+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C04ACA2A1F98E700D92831 /* Food+CoreDataProperties.swift */; };
+		B3EE4F212A53032D007B167F /* SlideInMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EE4F202A53032D007B167F /* SlideInMenuViewModel.swift */; };
+		B3EE4F232A53073D007B167F /* PetDataInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EE4F222A53073D007B167F /* PetDataInputViewModel.swift */; };
+		B3EE4F262A5308DA007B167F /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EE4F252A5308DA007B167F /* View+Extensions.swift */; };
+		B3EE4F282A530A97007B167F /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EE4F272A530A97007B167F /* BaseModel.swift */; };
 		B3F5B0392A372CD90072E890 /* Ausprobieren.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F5B0382A372CD90072E890 /* Ausprobieren.swift */; };
 		B3F5B03B2A373B0A0072E890 /* CoreDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F5B03A2A373B0A0072E890 /* CoreDataAccess.swift */; };
 /* End PBXBuildFile section */
@@ -68,8 +71,7 @@
 		B35C8C062A20CAA5009CC296 /* ProfileOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOverview.swift; sourceTree = "<group>"; };
 		B35C8C082A20CC4D009CC296 /* OverviewTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTile.swift; sourceTree = "<group>"; };
 		B37C34972A42FFF6004B75A2 /* RadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonGroup.swift; sourceTree = "<group>"; };
-		B3B1ADC22A41B132006F12F1 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
-		B3B1ADC52A41C6C6006F12F1 /* PetDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDataViewModel.swift; sourceTree = "<group>"; };
+		B3B1ADC22A41B132006F12F1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		B3C04AB02A1F8CA700D92831 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -85,6 +87,10 @@
 		B3C04AC82A1F98E700D92831 /* Vaccine+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Vaccine+CoreDataProperties.swift"; path = "HaustierApp/Model/Vaccine+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B3C04AC92A1F98E700D92831 /* Food+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Food+CoreDataClass.swift"; path = "HaustierApp/Model/Food+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B3C04ACA2A1F98E700D92831 /* Food+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Food+CoreDataProperties.swift"; path = "HaustierApp/Model/Food+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B3EE4F202A53032D007B167F /* SlideInMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInMenuViewModel.swift; sourceTree = "<group>"; };
+		B3EE4F222A53073D007B167F /* PetDataInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDataInputViewModel.swift; sourceTree = "<group>"; };
+		B3EE4F252A5308DA007B167F /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		B3EE4F272A530A97007B167F /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		B3F5B0382A372CD90072E890 /* Ausprobieren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ausprobieren.swift; sourceTree = "<group>"; };
 		B3F5B03A2A373B0A0072E890 /* CoreDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,9 +109,10 @@
 		B34C25152A261A5A00DB3C4E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B3B1ADC22A41B132006F12F1 /* CoreDataController.swift */,
-				B3B1ADC52A41C6C6006F12F1 /* PetDataViewModel.swift */,
+				B3B1ADC22A41B132006F12F1 /* CoreDataService.swift */,
 				B30FC03A2A43251C002A1B26 /* ProfileViewVM.swift */,
+				B3EE4F202A53032D007B167F /* SlideInMenuViewModel.swift */,
+				B3EE4F222A53073D007B167F /* PetDataInputViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -129,6 +136,7 @@
 		B3570A4D2A16448500F9ED41 /* HaustierApp */ = {
 			isa = PBXGroup;
 			children = (
+				B3EE4F242A5308B1007B167F /* Extensions */,
 				B3B1ADC42A41C650006F12F1 /* DeleteLater */,
 				B3570A4E2A16448500F9ED41 /* HaustierAppApp.swift */,
 				B3570A502A16448500F9ED41 /* ContentView.swift */,
@@ -211,6 +219,7 @@
 				B3C04AC82A1F98E700D92831 /* Vaccine+CoreDataProperties.swift */,
 				B3C04AC92A1F98E700D92831 /* Food+CoreDataClass.swift */,
 				B3C04ACA2A1F98E700D92831 /* Food+CoreDataProperties.swift */,
+				B3EE4F272A530A97007B167F /* BaseModel.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -224,6 +233,14 @@
 				B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		B3EE4F242A5308B1007B167F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE4F252A5308DA007B167F /* View+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +315,6 @@
 			files = (
 				B30FC0392A4321BE002A1B26 /* ProfileViewTile.swift in Sources */,
 				B3B1ADC92A41CF74006F12F1 /* RadioButton.swift in Sources */,
-				B3B1ADC62A41C6C6006F12F1 /* PetDataViewModel.swift in Sources */,
 				B3C04ACE2A1F98E700D92831 /* PetData+CoreDataProperties.swift in Sources */,
 				B3BB75BF2A1D06B70049AD74 /* SideMenuView.swift in Sources */,
 				B3C04AD22A1F98E700D92831 /* Medication+CoreDataProperties.swift in Sources */,
@@ -310,14 +326,18 @@
 				B3C04AD52A1F98E700D92831 /* Food+CoreDataClass.swift in Sources */,
 				B3570A582A16448600F9ED41 /* Persistence.swift in Sources */,
 				B3C04AD32A1F98E700D92831 /* Vaccine+CoreDataClass.swift in Sources */,
+				B3EE4F282A530A97007B167F /* BaseModel.swift in Sources */,
 				B3F5B0392A372CD90072E890 /* Ausprobieren.swift in Sources */,
-				B3B1ADC32A41B132006F12F1 /* CoreDataController.swift in Sources */,
+				B3EE4F232A53073D007B167F /* PetDataInputViewModel.swift in Sources */,
+				B3B1ADC32A41B132006F12F1 /* CoreDataService.swift in Sources */,
 				B3570A512A16448500F9ED41 /* ContentView.swift in Sources */,
 				B30FC03B2A43251C002A1B26 /* ProfileViewVM.swift in Sources */,
 				B3C04AB12A1F8CA700D92831 /* DataModel.xcdatamodeld in Sources */,
 				B3F5B03B2A373B0A0072E890 /* CoreDataAccess.swift in Sources */,
 				B34C25262A28DC4C00DB3C4E /* PetDataView.swift in Sources */,
+				B3EE4F262A5308DA007B167F /* View+Extensions.swift in Sources */,
 				B37C34982A42FFF6004B75A2 /* RadioButtonGroup.swift in Sources */,
+				B3EE4F212A53032D007B167F /* SlideInMenuViewModel.swift in Sources */,
 				B3570A6C2A1BBC7700F9ED41 /* Dashboard.swift in Sources */,
 				B3C04ACF2A1F98E700D92831 /* Diagnosis+CoreDataClass.swift in Sources */,
 				B34C25142A261A5500DB3C4E /* ViewModel.swift in Sources */,

@@ -19,7 +19,7 @@ class PetList: ObservableObject {
     func addPet(petName:String) {
         let newPet = PetData(context: managedObjectContext)
         newPet.petName = petName
-        PersistenceController.shared.save()
+        PersistenceManager.shared.save()
     }
     
 }

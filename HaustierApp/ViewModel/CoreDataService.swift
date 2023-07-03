@@ -9,32 +9,17 @@ import Foundation
 import UIKit
 import CoreData
 
-class CoreDataController:NSObject, NSFetchedResultsControllerDelegate {
+class CoreDataService:NSObject, NSFetchedResultsControllerDelegate, ObservableObject {
 //    var container: NSPersistentContainer!
 //    var fetchedResultsController: NSFetchedResultsController<PetData>!
     var context: NSManagedObjectContext
     
-    var pets: [PetData]
+    @Published var pets: [PetData]
     
     init( context: NSManagedObjectContext) {
         self.context = context
         self.pets = [PetData]()
     }
-    
-//    override func viewDidLoad(){
-//        super.viewDidLoad()
-//
-//        container = NSPersistentContainer(name: "DataModel")
-//        print("Context \(container.viewContext)")
-//        container.loadPersistentStores { storeDescription, error in
-//            if let error = error {
-//                print("unresolved error \(error)")
-//            }
-//
-//
-//        }
-//        loadSavedData()
-//    }
     
 //    func saveContext () {
 //        if container.viewContext.hasChanges{

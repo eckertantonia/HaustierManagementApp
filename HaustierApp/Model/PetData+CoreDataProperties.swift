@@ -120,3 +120,11 @@ extension PetData {
 extension PetData : Identifiable {
 
 }
+
+//extension PetData: BaseModel {
+//    static var all: NSFetchRequest<PetData> {
+//        let request = PetData.createFetchRequest()
+//        request.sortDescriptors = []
+//        return request
+//    }
+//}

@@ -13,3 +13,11 @@ import CoreData
 public class PetData: NSManagedObject {
 
 }
+
+extension PetData: BaseModel {
+    static var all: NSFetchRequest<PetData> {
+        let request = PetData.createFetchRequest()
+        request.sortDescriptors = []
+        return request
+    }
+}

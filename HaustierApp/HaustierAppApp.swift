@@ -9,21 +9,20 @@ import SwiftUI
 
 @main
 struct HaustierAppApp: App {
-    @EnvironmentObject var petList:PetList
-    
     @Environment(\.scenePhase) var scenePhase
     
-    let persistenceController = PersistenceController.shared
+    let persistenceManager = PersistenceManager.shared
     
 
     var body: some Scene {
         WindowGroup {
+            let viewContext = persistenceManager.container.viewContext
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, viewContext)
         }
         // saves when app moves to background
         .onChange(of: scenePhase){ _ in
-            persistenceController.save()
+            persistenceManager.save()
         }
     }
 }

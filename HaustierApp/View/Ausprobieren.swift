@@ -18,7 +18,7 @@ struct Ausprobieren: View {
         List{
             
             ForEach(pets){pet in
-                Text(pet.petName ?? "Unknown")
+                Text(pet.petName)
             }
             .onDelete(perform: removePet)
         }
@@ -26,7 +26,7 @@ struct Ausprobieren: View {
             let pet = PetData(context: managedObjectContext)
             pet.petName = "Paul"
             pet.gender = "male"
-            PersistenceController.shared.save() // saving after creating new object to save to Persistence Container
+            PersistenceManager.shared.save() // saving after creating new object to save to Persistence Container
         }
         
     }
@@ -35,7 +35,7 @@ struct Ausprobieren: View {
         for index in offsets {
             let pet = pets[index]
             managedObjectContext.delete(pet)
-            PersistenceController.shared.save()
+            PersistenceManager.shared.save()
         }
     }
 }

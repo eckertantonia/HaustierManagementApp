@@ -9,52 +9,43 @@ import SwiftUI
 
 struct PetDataInputView: View {
     //TODO in ViewModel auslagern
-    @Environment(\.managedObjectContext) var context
-    @State private var petName: String = ""
-    @State private var petBirthDate: Date = Date.init()
-    @State private var petGender: String = ""
-    @State private var petBreed: String = ""
-    @State private var petOrigin: String = ""
-    @State private var petWeight: String = ""
-    @State private var petHeight: String = ""
+    
+    @ObservedObject var vm: PetDataInputViewModel
+    
+    init(vm: PetDataInputViewModel) {
+        self.vm = vm
+    }
     
     let genderList = ["männlich", "weiblich"]
-//    var petDataVM = PetDataViewModel(context: moc)
 
     var body: some View {
         NavigationStack {
             Form{
                 Section{
-                    TextField("Name", text: $petName)
+                    TextField("Name", text: $vm.petName)
                         .disableAutocorrection(true)
-                    DatePicker(selection: $petBirthDate, in: ...Date.now, displayedComponents: .date) {
+                    DatePicker(selection: $vm.petBirthDate, in: ...Date.now, displayedComponents: .date) {
                         Text("Geburtstag")
                     }
-                    Picker("Geschlecht", selection: $petGender){
+                    Picker("Geschlecht", selection: $vm.petGender){
                         ForEach(genderList, id: \.self){ gender in
                             Text(gender)
                         }
                     }
-                    TextField("Rasse", text: $petBreed)
+                    TextField("Rasse", text: $vm.petBreed)
                         .disableAutocorrection(true)
-                    TextField("Herkunft", text: $petOrigin)
+                    TextField("Herkunft", text: $vm.petOrigin)
                         .disableAutocorrection(true)
-                    TextField("Gewicht", text: $petWeight)
+                    TextField("Gewicht", text: $vm.petWeight)
                         .keyboardType(.decimalPad)
-                    TextField("Größe", text: $petHeight)
+                    TextField("Größe", text: $vm.petHeight)
                         .keyboardType(.decimalPad)
                 }
               
                 Button("Save"){
-                    PetDataViewModel(context: context).savePetData(name: petName, dateOfBirth: petBirthDate, gender: petGender, breed: petBreed, origin: petOrigin, weight: petWeight, height: petHeight)
+                    vm.save()
                 }
-//                NavigationLink(destination: PetDataView()){
-//                    Text("Save")
-//                }
-//                    .simultaneousGesture(TapGesture().onEnded({
-//                        PetDataViewModel(context: context).savePetData(name: petName, dateOfBirth: petBirthDate, gender: petGender, breed: petBreed, origin: petOrigin, weight: petWeight, height: petHeight)
-//                        print("funktionier endlich!")
-//                    }))
+                .centerHorizontally()
             }
             .navigationBarTitle("Tierdaten ändern", displayMode: .inline)
         }
@@ -63,6 +54,7 @@ struct PetDataInputView: View {
 
 struct PetDataInputView_Previews: PreviewProvider {
     static var previews: some View {
-        PetDataInputView()
+        let viewContext = PersistenceManager.shared.container.viewContext
+        PetDataInputView(vm: PetDataInputViewModel(context: viewContext))
     }
 }

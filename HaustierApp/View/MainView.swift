@@ -34,7 +34,7 @@ struct MainView: View {
                 GeometryReader{ _ in
                     VStack{
                         //Slide In Menu
-                        SlideInMenu()
+                        SlideInMenu(vm: SlideInMenuViewModel(context: PersistenceManager.shared.container.viewContext))
                             .offset(x: showMenu ? UIScreen.main.bounds.width/8: UIScreen.main.bounds.width,
                                     y: -UIScreen.main.bounds.height/30)
                             .animation(.easeInOut(duration: 0.3), value: showMenu)

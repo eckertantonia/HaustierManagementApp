@@ -10,8 +10,7 @@ import CoreData
 
 struct ContentView: View {
     
-    //@Environment(\.managedObjectContext) var managedObjectContext
-    
+//    @Environment(\.managedObjectContext) var viewContext
     
     //MARK: - ViewBody
     var body: some View {

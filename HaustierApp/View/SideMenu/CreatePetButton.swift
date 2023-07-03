@@ -10,7 +10,7 @@ import SwiftUI
 struct CreatePetButton: View {
     
     var body: some View {
-        NavigationLink(destination: PetDataInputView()){
+        NavigationLink(destination: PetDataInputView(vm: PetDataInputViewModel(context: PersistenceManager.shared.container.viewContext))){
             VStack{
                 // Pic
                 Image(systemName: "plus.circle")

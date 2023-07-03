@@ -7,16 +7,16 @@
 
 import CoreData
 
-struct PersistenceController {
+struct PersistenceManager {
     // A singleton for our entire app to use
-    static let shared = PersistenceController()
+    static let shared = PersistenceManager()
     
     // Storage for Core Data
     let container: NSPersistentContainer
 
     // A test configuration for SwiftUI previews
-    static var preview: PersistenceController = {
-        let previewController = PersistenceController(inMemory: true)
+    static var preview: PersistenceManager = {
+        let previewController = PersistenceManager(inMemory: true)
         let viewContext = previewController.container.viewContext
         // Create 10 example PetData
         for _ in 0..<10 {
@@ -37,7 +37,7 @@ struct PersistenceController {
     }()
 
     // An initializer to load Core Data, optionally able to use an in-memory store
-    init(inMemory: Bool = false) {
+    private init(inMemory: Bool = false) {
         // name is Data Model name (mine is called DataModel)
         container = NSPersistentContainer(name: "DataModel")
         
@@ -47,18 +47,7 @@ struct PersistenceController {
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                fatalError("Unable to initialize Core Data \(error)")
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true

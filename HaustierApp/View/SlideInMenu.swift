@@ -10,17 +10,26 @@ import SwiftUI
 struct SlideInMenu: View {
     @Environment(\.managedObjectContext) var moc
     
-    @State var pets = [PetData]()
-   
+    @ObservedObject private var slideInMenuVM: SlideInMenuViewModel
     
+    init(vm: SlideInMenuViewModel) {
+        self.slideInMenuVM = vm
+    }
     
+    private func deletePetData(at offsets: IndexSet) {
+        offsets.forEach{ index in
+            let pet = slideInMenuVM.pets[index]
+            slideInMenuVM.deletePetData(petId: pet.id)
+        }
+    }
         var body: some View {
             
             ScrollView(.horizontal) {
                 HStack{
-                    ForEach(pets, id: \.self){ pet in
-                        PetProfileButton(image: "pawprint.fill", title: pet.petName, pet: pet )
-                    }
+                    ForEach(slideInMenuVM.pets, id: \.self){ pet in
+                        PetProfileButton(image: "pawprint.fill", title: pet.petName, pet: pet.petData
+                        )
+                    }.onDelete(perform: deletePetData)
                     
                     // newPet Button
                     CreatePetButton()
@@ -35,7 +44,7 @@ struct SlideInMenu: View {
             .opacity(1) // TODO when Colors are chosen
             .padding(32)
             .onAppear{
-                pets = CoreDataController(context: moc).loadSavedData()
+//                pets = CoreDataService(context: moc).loadSavedData()
             }
         }
     }
@@ -43,6 +52,7 @@ struct SlideInMenu: View {
 
 struct SlideInMenu_Previews: PreviewProvider {
     static var previews: some View {
-        SlideInMenu()
+        let viewContext = PersistenceManager.shared.container.viewContext
+        SlideInMenu(vm: SlideInMenuViewModel(context: viewContext))
     }
 }
