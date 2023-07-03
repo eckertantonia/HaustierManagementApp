@@ -11,7 +11,7 @@ import CoreData
 @MainActor
 class SlideInMenuViewModel: NSObject, ObservableObject {
     
-    @Published var pets = [PetDataViewModel]()
+    @Published var pets = [PetViewModel]()
     
     private let fetchedResultsController: NSFetchedResultsController<PetData>
     private (set) var context: NSManagedObjectContext
@@ -28,7 +28,7 @@ class SlideInMenuViewModel: NSObject, ObservableObject {
             guard let pets = fetchedResultsController.fetchedObjects else {
                 return
             }
-            self.pets = pets.map(PetDataViewModel.init)
+            self.pets = pets.map(PetViewModel.init)
         } catch {
             print(error)
         }
@@ -52,11 +52,11 @@ extension SlideInMenuViewModel: NSFetchedResultsControllerDelegate {
         guard let pets = controller.fetchedObjects as? [PetData] else {
             return
         }
-        self.pets = pets.map(PetDataViewModel.init)
+        self.pets = pets.map(PetViewModel.init)
     }
 }
 
-struct PetDataViewModel: Identifiable, Hashable {
+struct PetViewModel: Identifiable, Hashable {
     
     var petData: PetData
     

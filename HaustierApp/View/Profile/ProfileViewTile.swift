@@ -44,6 +44,6 @@ struct ProfileViewTile<Content: View>: View {
 
 struct ProfileViewTile_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileViewTile<AnyView>(tileDetails: ["title", "detail"], destinationView: {AnyView(PetDataView())})
+        ProfileViewTile<AnyView>(tileDetails: ["title", "detail"], destinationView: {AnyView(PetDataView(pet: PetData(), title: "Titel"))})
     }
 }

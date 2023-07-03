@@ -12,9 +12,9 @@ class ProfileViewVM {
     let pet: PetData
     let tiles: [String]
     
-    init(pet: PetData, tiles: [String]) {
+    init(pet: PetData) {
         self.pet = pet
-        self.tiles = tiles
+        self.tiles = ["Tierdaten", "Futter", "Diagnosen", "Medikamente", "Impfungen"]
     }
     
     func tileDetails(tileTitle: String) -> [String]{
@@ -40,6 +40,7 @@ class ProfileViewVM {
             // add Tile Title
             tileDetails.append(tiles[1])
             // TODO
+            
         case tiles[2]:
             //Diagnose
             // add Tile Title

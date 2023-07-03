@@ -11,12 +11,10 @@ struct ProfileOverview: View {
     
     var pet: PetData
     let profileViewVM: ProfileViewVM
-    let tileTitleList: [String]
     
     init(pet: PetData) {
         self.pet = pet
-        self.tileTitleList = ["Tierdaten", "Futter", "Diagnosen", "Medikamente", "Impfungen"]
-        self.profileViewVM = ProfileViewVM(pet: pet, tiles: tileTitleList)
+        self.profileViewVM = ProfileViewVM(pet: pet)
     }
     
     
@@ -27,8 +25,8 @@ struct ProfileOverview: View {
     var body: some View{
         NavigationView {
             ScrollView {
-                ForEach(tileTitleList, id: \.self){ title in
-                    ProfileViewTile<AnyView>(tileDetails: profileViewVM.tileDetails(tileTitle: title), destinationView: {AnyView(PetDataView())})
+                ForEach(profileViewVM.tiles, id: \.self){ title in
+                    ProfileViewTile<AnyView>(tileDetails: profileViewVM.tileDetails(tileTitle: title), destinationView: {AnyView(PetDataView(pet: pet, title: title))})
                 }
             
             }
