@@ -23,7 +23,7 @@ struct ProfileOverview: View {
 //    }
     
     var body: some View{
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 ForEach(profileViewVM.tiles, id: \.self){ title in
                     ProfileViewTile<AnyView>(tileDetails: profileViewVM.tileDetails(tileTitle: title), destinationView: {AnyView(PetDataView(pet: pet, title: title))})

@@ -43,9 +43,6 @@ struct SlideInMenu: View {
             .background()
             .opacity(1) // TODO when Colors are chosen
             .padding(32)
-            .onAppear{
-//                pets = CoreDataService(context: moc).loadSavedData()
-            }
         }
     }
 

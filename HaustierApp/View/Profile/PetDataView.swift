@@ -12,18 +12,16 @@ import SwiftUI
 struct PetDataView: View {
     
     @ObservedObject var petDataVM: PetDataViewModel
-    var pet: PetData
     var title: String
     
     init(pet: PetData, title: String){
-        petDataVM = PetDataViewModel()
-        self.pet = pet
+        petDataVM = PetDataViewModel(pet: pet)
         self.title = title
-        petDataVM.setPet(pet: self.pet)
+//        petDataVM.setPet(pet: self.pet)
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List{
                 Section{
                     Image(systemName: "pawprint.fill")
@@ -35,7 +33,7 @@ struct PetDataView: View {
                 Section {
                     HStack{
                         Text("Name")
-                        Text(pet.petName)
+                        Text(petDataVM.pet!.petName)
                             .font(.title3)
                     }
                     HStack{
@@ -45,28 +43,28 @@ struct PetDataView: View {
                     }
                     HStack{
                         Text("Geschlecht")
-                        Text(pet.gender ?? "")
+                        Text(petDataVM.pet!.gender ?? "")
                             .font(.title3)
                     }
                     HStack{
                         Text("Rasse")
-                        Text(pet.petBreed ?? "")
+                        Text(petDataVM.pet!.petBreed ?? "")
                             .font(.title3)
                     }
                     HStack{
                         Text("Herkunft")
-                        Text(pet.placeOfOrigin ?? "")
+                        Text(petDataVM.pet!.placeOfOrigin ?? "")
                             .font(.title3)
                     }
                     HStack{
                         Text("Gewicht")
-                        Text(String(pet.petWeight))
+                        Text(String(petDataVM.pet!.petWeight))
                             .font(.title3)
                         Text("kg")
                     }
                     HStack{
                         Text("Schulterhöhe")
-                        Text(String(pet.petHeight))
+                        Text(String(petDataVM.pet!.petHeight))
                             .font(.title3)
                         Text("cm")
                     }
@@ -74,7 +72,7 @@ struct PetDataView: View {
             }
                 .navigationBarTitle(title, displayMode: .automatic)
                 .toolbar{
-                    NavigationLink(destination: PetDataInputView(vm: PetDataInputViewModel(context: PersistenceManager.shared.container.viewContext))){
+                    NavigationLink(destination: PetDataInputView(vm: PetDataInputViewModel(pet: petDataVM.pet))){
                         Text("Edit")
                     }
                 }

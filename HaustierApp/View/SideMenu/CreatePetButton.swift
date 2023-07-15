@@ -9,25 +9,30 @@ import SwiftUI
 
 struct CreatePetButton: View {
     
+    @State private var showingInputScreen = false
+    
     var body: some View {
-        NavigationLink(destination: PetDataInputView(vm: PetDataInputViewModel(context: PersistenceManager.shared.container.viewContext))){
+        
+        Button {
+            showingInputScreen.toggle()
+        } label: {
             VStack{
-                // Pic
                 Image(systemName: "plus.circle")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 40, height: 40)
                     .cornerRadius(10)
-                //Padding top for Top Close Button
-                    //.padding(.top, 50)
                 Text("neu")
                     .font(.title3)
                     .padding(.top)
                 
             }
-            .padding([.leading, .trailing])
+            
         }
-        .padding()
+        .padding([.leading, .trailing])
+        .sheet(isPresented: $showingInputScreen){
+                PetDataInputView(vm: PetDataInputViewModel())
+    }
     }
 }
 
