@@ -2,7 +2,7 @@
 //  PetData+CoreDataProperties.swift
 //  HaustierApp
 //
-//  Created by Mobile1 on 01.06.23.
+//  Created by Mobile1 on 15.07.23.
 //
 //
 
@@ -12,13 +12,12 @@ import CoreData
 
 extension PetData {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<PetData> {
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<PetData> {
         return NSFetchRequest<PetData>(entityName: "PetData")
     }
 
-    // change to non-optional later
     @NSManaged public var dateOfBirth: Date?
-    @NSManaged public var gender: String?
+    @NSManaged public var gender: String
     @NSManaged public var petBreed: String?
     @NSManaged public var petHeight: Double
     @NSManaged public var petName: String
@@ -29,6 +28,14 @@ extension PetData {
     @NSManaged public var foodIntolerance: NSSet?
     @NSManaged public var medication: NSSet?
     @NSManaged public var vaccine: NSSet?
+    
+    // NSSet muss in Set<> konvertiert werden, sonst kann man damit nix anfangen
+    public var foodArray: [Food] {
+        let set = food as? Set<Food> ?? []
+        return set.sorted {
+            $0.wrappedFoodBrand < $1.wrappedFoodBrand
+        }
+    }
 
 }
 
@@ -120,11 +127,3 @@ extension PetData {
 extension PetData : Identifiable {
 
 }
-
-//extension PetData: BaseModel {
-//    static var all: NSFetchRequest<PetData> {
-//        let request = PetData.createFetchRequest()
-//        request.sortDescriptors = []
-//        return request
-//    }
-//}

@@ -29,7 +29,7 @@ class CoreController: NSObject, ObservableObject, NSFetchedResultsControllerDele
     
     func loadData(){
         if petFRC == nil {
-            let request = PetData.createFetchRequest()
+            let request = PetData.fetchRequest()
         }
     }
     

@@ -16,7 +16,7 @@ public class PetData: NSManagedObject {
 
 extension PetData: BaseModel {
     static var all: NSFetchRequest<PetData> {
-        let request = PetData.createFetchRequest()
+        let request = PetData.fetchRequest()
         request.sortDescriptors = []
         return request
     }

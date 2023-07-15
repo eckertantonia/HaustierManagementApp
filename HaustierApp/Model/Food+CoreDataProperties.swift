@@ -5,7 +5,6 @@
 //  Created by Mobile1 on 25.05.23.
 //
 //
-
 import Foundation
 import CoreData
 
@@ -20,6 +19,18 @@ extension Food {
     @NSManaged public var foodProduct: String?
     @NSManaged public var foodAmount: Float
     @NSManaged public var pet: PetData?
+    
+    public var wrappedFoodBrand: String {
+        foodBrand ?? "Unbekannt"
+    }
+    
+    public var wrappedFoodProduct: String {
+        foodProduct ?? "Unbekannt"
+    }
+    
+    public var wrappedFoodAmount: Float {
+        foodAmount
+    }
 
 }
 

@@ -33,7 +33,7 @@ class CoreDataService:NSObject, NSFetchedResultsControllerDelegate, ObservableOb
     
     func loadSavedData() -> [PetData] {
         
-        let request = PetData.createFetchRequest()
+        let request = PetData.fetchRequest()
         let sort = NSSortDescriptor(key: "petName", ascending: false)
         request.sortDescriptors = [sort]
 //        if fetchedResultsController == nil {

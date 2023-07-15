@@ -18,7 +18,7 @@ class PetDataViewModel: NSObject, ObservableObject{
     init(pet: PetData) {
         self.context = PersistenceManager.shared.container.viewContext
         
-        let fetchRequest: NSFetchRequest<PetData> = PetData.createFetchRequest()
+        let fetchRequest: NSFetchRequest<PetData> = PetData.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "petName", ascending: true)]
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)

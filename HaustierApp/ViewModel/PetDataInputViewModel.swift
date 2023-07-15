@@ -57,7 +57,7 @@ class PetDataInputViewModel: ObservableObject {
     }
     
     func save() {
-        let fetchRequest: NSFetchRequest<PetData> = PetData.createFetchRequest()
+        let fetchRequest: NSFetchRequest<PetData> = PetData.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "petName == %@", petName)
         
         do {
