@@ -16,14 +16,14 @@ class FoodVM: NSObject, ObservableObject{
     @Published var foodArray: [Food]
     @Published var intolerance: FoodIntolerance?
     
-    private let fetchedResultsController: NSFetchedResultsController<Food>
+    private let fetchedResultsController: NSFetchedResultsController<PetData>
     
     init(pet: PetData) {
         self.context = PersistenceManager.shared.container.viewContext
         self.foodArray = []
         
-        let fetchRequest: NSFetchRequest<Food> = Food.createFetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "pet", ascending: true)]
+        let fetchRequest: NSFetchRequest<PetData> = PetData.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "petName", ascending: true)]
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
@@ -45,8 +45,8 @@ class FoodVM: NSObject, ObservableObject{
         guard let objects = fetchedResultsController.fetchedObjects else {
             return
         }
-        self.foodArray = objects
-        print(objects)
+        self.foodArray = objects.first(where: {$0.petName == name})?.foodArray ?? []
+        print("foodArray \(foodArray.count)")
 //        foodArray = pet?.foodArray ?? []
 //        intolerance = pet?.foodIntolerance
     }
@@ -68,7 +68,7 @@ class FoodVM: NSObject, ObservableObject{
 
 extension FoodVM: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.foodArray = fetchedResultsController.fetchedObjects ?? []
+        self.foodArray = fetchedResultsController.fetchedObjects?.first?.foodArray ?? []
     }
 }
 

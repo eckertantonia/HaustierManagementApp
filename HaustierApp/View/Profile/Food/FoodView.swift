@@ -25,16 +25,8 @@ struct FoodView: View {
     
     var body: some View {
         NavigationStack{
-            List{
-                ForEach(foodVM.foodArray, id: \.self){ food in
-                    Text(food.wrappedFoodBrand + " " + food.wrappedFoodProduct)
-                }
-            }
-                .toolbar{
-                    Button("Add") {
-                        showingAddFood.toggle()
-                    }
-                }
+            foodPart
+            intolerancePart
                 .navigationBarTitle(title)
                 .sheet(isPresented: $showingAddFood){
                     // AddFoodView
@@ -47,6 +39,44 @@ struct FoodView: View {
         }
         
             
+    }
+}
+
+extension FoodView {
+    
+    var foodPart: some View {
+        VStack{
+            Text(title)
+                .font(.title)
+            HStack{
+                Spacer()
+                Button (
+                    action:{
+                        showingAddFood.toggle()
+                    }, label: {
+                        Image(systemName: "plus")
+                    }
+                    
+                )
+                .padding()
+            }
+            List{
+                ForEach(foodVM.foodArray, id: \.self){ food in
+                    Text(food.wrappedFoodBrand + " " + food.wrappedFoodProduct)
+                }
+            }
+        }
+    }
+    
+}
+
+extension FoodView {
+    
+    var intolerancePart: some View {
+        
+        Text("IntolerancePart")
+            .font(.title)
+        
     }
 }
 
