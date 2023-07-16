@@ -31,6 +31,7 @@
 		B3A2E4EA2A62D81800C90C99 /* PetData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E4E92A62D81800C90C99 /* PetData+CoreDataProperties.swift */; };
 		B3A2E4EE2A62DEA300C90C99 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E4ED2A62DEA300C90C99 /* EditFoodView.swift */; };
 		B3A2E4F02A62DEB800C90C99 /* EditFoodVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E4EF2A62DEB800C90C99 /* EditFoodVM.swift */; };
+		B3A2E4F52A62EFFE00C90C99 /* DefinedColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E4F42A62EFFE00C90C99 /* DefinedColours.swift */; };
 		B3B1ADC32A41B132006F12F1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC22A41B132006F12F1 /* CoreDataService.swift */; };
 		B3B1ADC92A41CF74006F12F1 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */; };
 		B3BB75BF2A1D06B70049AD74 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */; };
@@ -81,6 +82,7 @@
 		B3A2E4E92A62D81800C90C99 /* PetData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B3A2E4ED2A62DEA300C90C99 /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 		B3A2E4EF2A62DEB800C90C99 /* EditFoodVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodVM.swift; sourceTree = "<group>"; };
+		B3A2E4F42A62EFFE00C90C99 /* DefinedColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinedColours.swift; sourceTree = "<group>"; };
 		B3B1ADC22A41B132006F12F1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		B3570A4D2A16448500F9ED41 /* HaustierApp */ = {
 			isa = PBXGroup;
 			children = (
+				B3A2E4F32A62EFE700C90C99 /* Styles */,
 				B3EE4F242A5308B1007B167F /* Extensions */,
 				B3B1ADC42A41C650006F12F1 /* DeleteLater */,
 				B3570A4E2A16448500F9ED41 /* HaustierAppApp.swift */,
@@ -212,6 +215,14 @@
 				B34C25292A28DED700DB3C4E /* PetDataInputView.swift */,
 			);
 			path = PetData;
+			sourceTree = "<group>";
+		};
+		B3A2E4F32A62EFE700C90C99 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				B3A2E4F42A62EFFE00C90C99 /* DefinedColours.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		B3B1ADC42A41C650006F12F1 /* DeleteLater */ = {
@@ -348,6 +359,7 @@
 				B3B1ADC92A41CF74006F12F1 /* RadioButton.swift in Sources */,
 				B3BB75BF2A1D06B70049AD74 /* SideMenuView.swift in Sources */,
 				B3A2E4EE2A62DEA300C90C99 /* EditFoodView.swift in Sources */,
+				B3A2E4F52A62EFFE00C90C99 /* DefinedColours.swift in Sources */,
 				B3C04AD22A1F98E700D92831 /* Medication+CoreDataProperties.swift in Sources */,
 				B34C252A2A28DED700DB3C4E /* PetDataInputView.swift in Sources */,
 				B3A2E4E42A62B8AA00C90C99 /* FoodView.swift in Sources */,
