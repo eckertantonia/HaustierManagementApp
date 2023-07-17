@@ -47,11 +47,19 @@ struct PersistenceManager {
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
+                
                 fatalError("Unable to initialize Core Data \(error)")
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
         self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+    }
+    
+    // helper
+    func deleteAll() {
+          let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = PetData.fetchRequest()
+          let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
+          _ = try? container.viewContext.execute(batchDeleteRequest1)
     }
     
     func save() {

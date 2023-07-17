@@ -15,8 +15,10 @@ class EditFoodVM: ObservableObject {
     @Published var foodBrand: String
     @Published var foodProduct: String
     @Published var foodAmount: String
+    @Published var foodType: String
+    var foodTypes = ["Trockenfutter", "Nassfutter"]
     
-    var food: Food?
+    let food: Food
     var pet: PetData
     
     init(food: Food? = nil, pet: PetData) {
@@ -25,15 +27,20 @@ class EditFoodVM: ObservableObject {
         
         if food != nil {
             print("Du hast ein Food mitgegeben")
+            self.food = food!
             self.foodBrand = food?.foodBrand ?? ""
             self.foodProduct = food?.foodProduct ?? ""
             self.foodAmount = String(food?.foodAmount ?? 0)
+            self.foodType = food?.foodType ?? ""
+            print(food)
             
         } else {
             print("neues Food")
+            self.food = Food(context: context)
             self.foodBrand = ""
             self.foodProduct = ""
             self.foodAmount = "0"
+            self.foodType = ""
             
         }
     }
@@ -45,15 +52,13 @@ class EditFoodVM: ObservableObject {
         do {
             let results = try context.fetch(fetchRequest)
             if let existingPet = results.first {
-                
-                let newFood = Food(context: context)
-                newFood.foodBrand = foodBrand
-                newFood.foodProduct = foodProduct
-                newFood.foodAmount = Float(foodAmount) ?? 0
-                newFood.pet = existingPet
-                
-            } else {
-                
+            
+                food.foodBrand = foodBrand
+                food.foodProduct = foodProduct
+                food.foodAmount = Float(foodAmount) ?? 0
+                food.foodType = foodType
+                food.pet = existingPet
+                print(food)
             }
             try context.save()
         } catch let error as NSError {

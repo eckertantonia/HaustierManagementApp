@@ -32,6 +32,19 @@
 		B3A2E4EE2A62DEA300C90C99 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E4ED2A62DEA300C90C99 /* EditFoodView.swift */; };
 		B3A2E4F02A62DEB800C90C99 /* EditFoodVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E4EF2A62DEB800C90C99 /* EditFoodVM.swift */; };
 		B3A2E4F52A62EFFE00C90C99 /* DefinedColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E4F42A62EFFE00C90C99 /* DefinedColours.swift */; };
+		B3A2E4F72A640EDA00C90C99 /* FoodDetailTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E4F62A640EDA00C90C99 /* FoodDetailTile.swift */; };
+		B3A2E4F92A6411DD00C90C99 /* EditIntoleranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E4F82A6411DD00C90C99 /* EditIntoleranceView.swift */; };
+		B3A2E4FB2A6412AD00C90C99 /* EditFoodIntoleranceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E4FA2A6412AD00C90C99 /* EditFoodIntoleranceVM.swift */; };
+		B3A2E4FD2A641A2200C90C99 /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E4FC2A641A2200C90C99 /* FoodDetailView.swift */; };
+		B3A2E5032A656E3E00C90C99 /* DiagnosisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E5022A656E3E00C90C99 /* DiagnosisView.swift */; };
+		B3A2E5062A6574CB00C90C99 /* DiagnosisVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E5052A6574CB00C90C99 /* DiagnosisVM.swift */; };
+		B3A2E5082A65785B00C90C99 /* DiagnosisDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E5072A65785B00C90C99 /* DiagnosisDetailView.swift */; };
+		B3A2E50A2A65789900C90C99 /* DiagnosisTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E5092A65789900C90C99 /* DiagnosisTile.swift */; };
+		B3A2E50C2A65794C00C90C99 /* EditDiagnosisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E50B2A65794C00C90C99 /* EditDiagnosisView.swift */; };
+		B3A2E50E2A657AE200C90C99 /* EditDiagnosisVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E50D2A657AE200C90C99 /* EditDiagnosisVM.swift */; };
+		B3A2E5132A65832100C90C99 /* MedicationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E5122A65832100C90C99 /* MedicationVM.swift */; };
+		B3A2E5152A6583A200C90C99 /* EditMedicationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E5142A6583A200C90C99 /* EditMedicationVM.swift */; };
+		B3A2E5182A6585EE00C90C99 /* MedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E5172A6585EE00C90C99 /* MedicationView.swift */; };
 		B3B1ADC32A41B132006F12F1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC22A41B132006F12F1 /* CoreDataService.swift */; };
 		B3B1ADC92A41CF74006F12F1 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */; };
 		B3BB75BF2A1D06B70049AD74 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */; };
@@ -83,6 +96,19 @@
 		B3A2E4ED2A62DEA300C90C99 /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 		B3A2E4EF2A62DEB800C90C99 /* EditFoodVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodVM.swift; sourceTree = "<group>"; };
 		B3A2E4F42A62EFFE00C90C99 /* DefinedColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinedColours.swift; sourceTree = "<group>"; };
+		B3A2E4F62A640EDA00C90C99 /* FoodDetailTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailTile.swift; sourceTree = "<group>"; };
+		B3A2E4F82A6411DD00C90C99 /* EditIntoleranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIntoleranceView.swift; sourceTree = "<group>"; };
+		B3A2E4FA2A6412AD00C90C99 /* EditFoodIntoleranceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodIntoleranceVM.swift; sourceTree = "<group>"; };
+		B3A2E4FC2A641A2200C90C99 /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
+		B3A2E5022A656E3E00C90C99 /* DiagnosisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisView.swift; sourceTree = "<group>"; };
+		B3A2E5052A6574CB00C90C99 /* DiagnosisVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisVM.swift; sourceTree = "<group>"; };
+		B3A2E5072A65785B00C90C99 /* DiagnosisDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisDetailView.swift; sourceTree = "<group>"; };
+		B3A2E5092A65789900C90C99 /* DiagnosisTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisTile.swift; sourceTree = "<group>"; };
+		B3A2E50B2A65794C00C90C99 /* EditDiagnosisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDiagnosisView.swift; sourceTree = "<group>"; };
+		B3A2E50D2A657AE200C90C99 /* EditDiagnosisVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDiagnosisVM.swift; sourceTree = "<group>"; };
+		B3A2E5122A65832100C90C99 /* MedicationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationVM.swift; sourceTree = "<group>"; };
+		B3A2E5142A6583A200C90C99 /* EditMedicationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedicationVM.swift; sourceTree = "<group>"; };
+		B3A2E5172A6585EE00C90C99 /* MedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationView.swift; sourceTree = "<group>"; };
 		B3B1ADC22A41B132006F12F1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
@@ -124,10 +150,10 @@
 				B3B1ADC22A41B132006F12F1 /* CoreDataService.swift */,
 				B30FC03A2A43251C002A1B26 /* ProfileViewVM.swift */,
 				B3EE4F202A53032D007B167F /* SlideInMenuViewModel.swift */,
-				B3EE4F222A53073D007B167F /* PetDataInputViewModel.swift */,
-				B3EE4F292A531C9E007B167F /* PetDataViewModel.swift */,
-				B3A2E4E72A62D50500C90C99 /* FoodVM.swift */,
-				B3A2E4EF2A62DEB800C90C99 /* EditFoodVM.swift */,
+				B3A2E50F2A6582E800C90C99 /* PetData */,
+				B3A2E5102A65830300C90C99 /* Food */,
+				B3A2E5112A65830E00C90C99 /* Diagnosis */,
+				B3A2E5162A6583A900C90C99 /* Medication */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -151,7 +177,6 @@
 		B3570A4D2A16448500F9ED41 /* HaustierApp */ = {
 			isa = PBXGroup;
 			children = (
-				B3A2E4F32A62EFE700C90C99 /* Styles */,
 				B3EE4F242A5308B1007B167F /* Extensions */,
 				B3B1ADC42A41C650006F12F1 /* DeleteLater */,
 				B3570A4E2A16448500F9ED41 /* HaustierAppApp.swift */,
@@ -160,6 +185,7 @@
 				B3C04AB62A1F8D5300D92831 /* Model */,
 				B3570A6A2A1BB9DE00F9ED41 /* View */,
 				B3570A522A16448600F9ED41 /* Assets.xcassets */,
+				B3A2E4F32A62EFE700C90C99 /* Styles */,
 				B3570A572A16448600F9ED41 /* Persistence.swift */,
 				B3C04AAF2A1F8CA700D92831 /* DataModel.xcdatamodeld */,
 				B3570A542A16448600F9ED41 /* Preview Content */,
@@ -184,6 +210,7 @@
 				B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */,
 				B3C04AD72A1F9B8B00D92831 /* SideMenu */,
 				B35C8C0A2A261991009CC296 /* Profile */,
+				B3A2E5172A6585EE00C90C99 /* MedicationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,9 +218,11 @@
 		B35C8C0A2A261991009CC296 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				B35C8C062A20CAA5009CC296 /* ProfileOverview.swift */,
+				B30FC0382A4321BE002A1B26 /* ProfileViewTile.swift */,
 				B3A2E4E52A62BE1E00C90C99 /* Food */,
 				B3A2E4E62A62BE3000C90C99 /* PetData */,
-				B30FC0382A4321BE002A1B26 /* ProfileViewTile.swift */,
+				B3A2E5042A656E4300C90C99 /* Diagnosis */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -203,6 +232,9 @@
 			children = (
 				B3A2E4E32A62B8AA00C90C99 /* FoodView.swift */,
 				B3A2E4ED2A62DEA300C90C99 /* EditFoodView.swift */,
+				B3A2E4F62A640EDA00C90C99 /* FoodDetailTile.swift */,
+				B3A2E4F82A6411DD00C90C99 /* EditIntoleranceView.swift */,
+				B3A2E4FC2A641A2200C90C99 /* FoodDetailView.swift */,
 			);
 			path = Food;
 			sourceTree = "<group>";
@@ -210,7 +242,6 @@
 		B3A2E4E62A62BE3000C90C99 /* PetData */ = {
 			isa = PBXGroup;
 			children = (
-				B35C8C062A20CAA5009CC296 /* ProfileOverview.swift */,
 				B34C25252A28DC4C00DB3C4E /* PetDataView.swift */,
 				B34C25292A28DED700DB3C4E /* PetDataInputView.swift */,
 			);
@@ -223,6 +254,54 @@
 				B3A2E4F42A62EFFE00C90C99 /* DefinedColours.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		B3A2E5042A656E4300C90C99 /* Diagnosis */ = {
+			isa = PBXGroup;
+			children = (
+				B3A2E5022A656E3E00C90C99 /* DiagnosisView.swift */,
+				B3A2E50B2A65794C00C90C99 /* EditDiagnosisView.swift */,
+				B3A2E5072A65785B00C90C99 /* DiagnosisDetailView.swift */,
+				B3A2E5092A65789900C90C99 /* DiagnosisTile.swift */,
+			);
+			path = Diagnosis;
+			sourceTree = "<group>";
+		};
+		B3A2E50F2A6582E800C90C99 /* PetData */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE4F222A53073D007B167F /* PetDataInputViewModel.swift */,
+				B3EE4F292A531C9E007B167F /* PetDataViewModel.swift */,
+			);
+			path = PetData;
+			sourceTree = "<group>";
+		};
+		B3A2E5102A65830300C90C99 /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				B3A2E4E72A62D50500C90C99 /* FoodVM.swift */,
+				B3A2E4EF2A62DEB800C90C99 /* EditFoodVM.swift */,
+				B3A2E4FA2A6412AD00C90C99 /* EditFoodIntoleranceVM.swift */,
+			);
+			path = Food;
+			sourceTree = "<group>";
+		};
+		B3A2E5112A65830E00C90C99 /* Diagnosis */ = {
+			isa = PBXGroup;
+			children = (
+				B3A2E5052A6574CB00C90C99 /* DiagnosisVM.swift */,
+				B3A2E50D2A657AE200C90C99 /* EditDiagnosisVM.swift */,
+			);
+			path = Diagnosis;
+			sourceTree = "<group>";
+		};
+		B3A2E5162A6583A900C90C99 /* Medication */ = {
+			isa = PBXGroup;
+			children = (
+				B3A2E5122A65832100C90C99 /* MedicationVM.swift */,
+				B3A2E5142A6583A200C90C99 /* EditMedicationVM.swift */,
+			);
+			path = Medication;
 			sourceTree = "<group>";
 		};
 		B3B1ADC42A41C650006F12F1 /* DeleteLater */ = {
@@ -361,8 +440,11 @@
 				B3A2E4EE2A62DEA300C90C99 /* EditFoodView.swift in Sources */,
 				B3A2E4F52A62EFFE00C90C99 /* DefinedColours.swift in Sources */,
 				B3C04AD22A1F98E700D92831 /* Medication+CoreDataProperties.swift in Sources */,
+				B3A2E5152A6583A200C90C99 /* EditMedicationVM.swift in Sources */,
+				B3A2E5182A6585EE00C90C99 /* MedicationView.swift in Sources */,
 				B34C252A2A28DED700DB3C4E /* PetDataInputView.swift in Sources */,
 				B3A2E4E42A62B8AA00C90C99 /* FoodView.swift in Sources */,
+				B3A2E4F72A640EDA00C90C99 /* FoodDetailTile.swift in Sources */,
 				B3C04ACB2A1F98E700D92831 /* FoodIntolerance+CoreDataClass.swift in Sources */,
 				B3C04ACC2A1F98E700D92831 /* FoodIntolerance+CoreDataProperties.swift in Sources */,
 				B34C25172A2626DC00DB3C4E /* NavigationBar.swift in Sources */,
@@ -371,6 +453,10 @@
 				B3570A582A16448600F9ED41 /* Persistence.swift in Sources */,
 				B3C04AD32A1F98E700D92831 /* Vaccine+CoreDataClass.swift in Sources */,
 				B3A2E4E82A62D50500C90C99 /* FoodVM.swift in Sources */,
+				B3A2E50A2A65789900C90C99 /* DiagnosisTile.swift in Sources */,
+				B3A2E4F92A6411DD00C90C99 /* EditIntoleranceView.swift in Sources */,
+				B3A2E4FD2A641A2200C90C99 /* FoodDetailView.swift in Sources */,
+				B3A2E5062A6574CB00C90C99 /* DiagnosisVM.swift in Sources */,
 				B3EE4F282A530A97007B167F /* BaseModel.swift in Sources */,
 				B3F5B0392A372CD90072E890 /* Ausprobieren.swift in Sources */,
 				B3EE4F232A53073D007B167F /* PetDataInputViewModel.swift in Sources */,
@@ -379,7 +465,9 @@
 				B3570A512A16448500F9ED41 /* ContentView.swift in Sources */,
 				B30FC03B2A43251C002A1B26 /* ProfileViewVM.swift in Sources */,
 				B3A2E4EA2A62D81800C90C99 /* PetData+CoreDataProperties.swift in Sources */,
+				B3A2E5132A65832100C90C99 /* MedicationVM.swift in Sources */,
 				B3C04AB12A1F8CA700D92831 /* DataModel.xcdatamodeld in Sources */,
+				B3A2E50E2A657AE200C90C99 /* EditDiagnosisVM.swift in Sources */,
 				B3F5B03B2A373B0A0072E890 /* CoreDataAccess.swift in Sources */,
 				B34C25262A28DC4C00DB3C4E /* PetDataView.swift in Sources */,
 				B3EE4F262A5308DA007B167F /* View+Extensions.swift in Sources */,
@@ -394,12 +482,16 @@
 				B35C8C092A20CC4D009CC296 /* OverviewTile.swift in Sources */,
 				B3C04ACD2A1F98E700D92831 /* PetData+CoreDataClass.swift in Sources */,
 				B3C04AD42A1F98E700D92831 /* Vaccine+CoreDataProperties.swift in Sources */,
+				B3A2E50C2A65794C00C90C99 /* EditDiagnosisView.swift in Sources */,
 				B34C251E2A263F0E00DB3C4E /* SlideInMenu.swift in Sources */,
 				B34C251A2A262BB800DB3C4E /* MainView.swift in Sources */,
+				B3A2E4FB2A6412AD00C90C99 /* EditFoodIntoleranceVM.swift in Sources */,
 				B3570A4F2A16448500F9ED41 /* HaustierAppApp.swift in Sources */,
 				B35C8C072A20CAA5009CC296 /* ProfileOverview.swift in Sources */,
 				B3C04AD62A1F98E700D92831 /* Food+CoreDataProperties.swift in Sources */,
+				B3A2E5032A656E3E00C90C99 /* DiagnosisView.swift in Sources */,
 				B34C251C2A26364A00DB3C4E /* PetProfileButton.swift in Sources */,
+				B3A2E5082A65785B00C90C99 /* DiagnosisDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

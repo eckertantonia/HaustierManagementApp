@@ -33,7 +33,28 @@ extension PetData {
     public var foodArray: [Food] {
         let set = food as? Set<Food> ?? []
         return set.sorted {
-            $0.wrappedFoodBrand < $1.wrappedFoodBrand
+            $0.foodProduct < $1.foodProduct
+        }
+    }
+    
+    public var intoleranceArray: [FoodIntolerance] {
+        let set = foodIntolerance as? Set<FoodIntolerance> ?? []
+        return set.sorted {
+            $0.intolerance < $1.intolerance
+        }
+    }
+    
+    public var diagnosisArray: [Diagnosis] {
+        let set = diagnosis as? Set<Diagnosis> ?? []
+        return set.sorted {
+            $0.diagnosisDescription < $1.diagnosisDescription
+        }
+    }
+    
+    public var medicationArry: [Medication] {
+        let set = medication as? Set<Medication> ?? []
+        return set.sorted {
+            $0.medication < $1.medication
         }
     }
 

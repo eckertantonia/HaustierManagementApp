@@ -20,7 +20,6 @@ struct FoodView: View {
         self.pet = pet
         self.title = title
         self.foodVM = FoodVM(pet: pet)
-//        petDataVM.setPet(pet: self.pet)
     }
     
     var body: some View {
@@ -30,10 +29,11 @@ struct FoodView: View {
                 .navigationBarTitle(title)
                 .sheet(isPresented: $showingAddFood){
                     // AddFoodView
-                    EditFoodView(pet: pet)
+                    EditFoodView(vm: EditFoodVM(pet: pet))
                 }
                 .sheet(isPresented: $showingAddIntolerances){
                     // AddIntolerancesView
+                    EditIntoleranceView(pet: pet)
                 }
             
         }
@@ -46,9 +46,10 @@ extension FoodView {
     
     var foodPart: some View {
         VStack{
-            Text(title)
-                .font(.title)
             HStack{
+                Text(title)
+                    .font(.title)
+                    .padding()
                 Spacer()
                 Button (
                     action:{
@@ -62,7 +63,8 @@ extension FoodView {
             }
             List{
                 ForEach(foodVM.foodArray, id: \.self){ food in
-                    Text(food.wrappedFoodBrand + " " + food.wrappedFoodProduct)
+//                    Text(food.wrappedFoodBrand + " " + food.wrappedFoodProduct)
+                    FoodDetailTile(food: food)
                 }
             }
         }
@@ -74,9 +76,28 @@ extension FoodView {
     
     var intolerancePart: some View {
         
-        Text("IntolerancePart")
-            .font(.title)
-        
+        VStack{
+            HStack{
+                Text("Unverträglichkeiten")
+                    .font(.title)
+                    .padding()
+                Spacer()
+                Button (
+                    action:{
+                        showingAddIntolerances.toggle()
+                    }, label: {
+                        Image(systemName: "plus")
+                    }
+                    
+                )
+                .padding()
+            }
+            List{
+                ForEach(foodVM.intoleranceArray, id: \.self){ intolerance in
+                    Text(intolerance.intolerance)
+                }
+            }
+        }
     }
 }
 

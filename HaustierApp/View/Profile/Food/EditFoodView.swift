@@ -12,8 +12,8 @@ struct EditFoodView: View {
     
     @ObservedObject var editFoodVM: EditFoodVM
     
-    init(pet: PetData){
-        self.editFoodVM = EditFoodVM(pet: pet)
+    init(vm: EditFoodVM){
+        self.editFoodVM = vm
     }
     
     var body: some View {
@@ -24,6 +24,11 @@ struct EditFoodView: View {
                         .disableAutocorrection(true)
                     TextField("Produkt", text: $editFoodVM.foodProduct)
                         .disableAutocorrection(true)
+                    Picker("", selection: $editFoodVM.foodType) {
+                        ForEach(editFoodVM.foodTypes, id: \.self) {
+                            Text($0)
+                        }
+                    }
                     TextField("Menge in gramm", text: $editFoodVM.foodAmount)
                 }
                 Section{

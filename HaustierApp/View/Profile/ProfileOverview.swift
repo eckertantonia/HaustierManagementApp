@@ -31,7 +31,7 @@ struct ProfileOverview: View {
                         return AnyView(FoodView(pet: pet, title: title))
                         // diagnosen
                     case profileViewVM.tiles[2]:
-                        return AnyView(EmptyView())
+                        return AnyView(DiagnosisView(pet: pet, title: title))
                         // medikamente
                     case profileViewVM.tiles[3]:
                         return AnyView(EmptyView())

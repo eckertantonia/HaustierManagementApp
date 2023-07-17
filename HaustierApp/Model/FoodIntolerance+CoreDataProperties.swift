@@ -2,7 +2,7 @@
 //  FoodIntolerance+CoreDataProperties.swift
 //  HaustierApp
 //
-//  Created by Mobile1 on 25.05.23.
+//  Created by Mobile1 on 16.07.23.
 //
 //
 
@@ -12,11 +12,11 @@ import CoreData
 
 extension FoodIntolerance {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<FoodIntolerance> {
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<FoodIntolerance> {
         return NSFetchRequest<FoodIntolerance>(entityName: "FoodIntolerance")
     }
 
-    @NSManaged public var intolerance: String?
+    @NSManaged public var intolerance: String
     @NSManaged public var pet: PetData?
 
 }

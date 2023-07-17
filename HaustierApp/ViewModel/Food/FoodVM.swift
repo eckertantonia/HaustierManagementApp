@@ -14,15 +14,19 @@ class FoodVM: NSObject, ObservableObject{
     
     var context: NSManagedObjectContext
     @Published var foodArray: [Food]
-    @Published var intolerance: FoodIntolerance?
+    @Published var intoleranceArray: [FoodIntolerance]
     
     private let fetchedResultsController: NSFetchedResultsController<PetData>
+    private var pet: PetData
     
     init(pet: PetData) {
         self.context = PersistenceManager.shared.container.viewContext
+        self.pet = pet
         self.foodArray = []
+        self.intoleranceArray = []
         
         let fetchRequest: NSFetchRequest<PetData> = PetData.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "petName == %@", pet.petName)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "petName", ascending: true)]
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -46,29 +50,18 @@ class FoodVM: NSObject, ObservableObject{
             return
         }
         self.foodArray = objects.first(where: {$0.petName == name})?.foodArray ?? []
-        print("foodArray \(foodArray.count)")
-//        foodArray = pet?.foodArray ?? []
-//        intolerance = pet?.foodIntolerance
+        self.intoleranceArray = objects.first(where: {$0.petName == name})?.intoleranceArray ?? []
     }
     
-//    func setPet(pet: PetData) {
-//        self.pet = pet
-//    }
-    
-//    func birthdayFormatter() -> String{
-//        let formatter = DateFormatter()
-//        formatter.dateStyle = .long
-//        guard let formattedString = formatter.string(for: pet?.dateOfBirth) else {
-//            return ""
-//        }
-//        return formattedString
-//
-//    }
 }
 
 extension FoodVM: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.foodArray = fetchedResultsController.fetchedObjects?.first?.foodArray ?? []
+        self.intoleranceArray = fetchedResultsController.fetchedObjects?.first?.intoleranceArray ?? []
+        print("petname \(fetchedResultsController.fetchedObjects?.first?.petName)")
+        print("foodArray \(foodArray)")
+        print("intoleranceArray \(intoleranceArray)")
     }
 }
 
