@@ -34,10 +34,10 @@ struct ProfileOverview: View {
                         return AnyView(DiagnosisView(pet: pet, title: title))
                         // medikamente
                     case profileViewVM.tiles[3]:
-                        return AnyView(EmptyView())
+                        return AnyView(MedicationView(pet: pet, title: title))
                         // impfungen
                     case profileViewVM.tiles[4]:
-                        return AnyView(EmptyView())
+                        return AnyView(VaccineView(pet: pet, title: title))
                         // default
                     default:
                         return AnyView(PetDataView(pet: pet, title: title))
@@ -46,6 +46,7 @@ struct ProfileOverview: View {
             }
             .navigationBarTitle(pet.petName, displayMode: .inline)
         }
+        
     }
 }
 

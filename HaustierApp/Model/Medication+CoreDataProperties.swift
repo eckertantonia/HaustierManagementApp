@@ -23,6 +23,10 @@ extension Medication {
     @NSManaged public var medicationDays: String?
     @NSManaged public var medicationFrequency: Int64
     @NSManaged public var pet: PetData?
+    
+    public var wrappedMedicationBrand: String {
+        medicationBrand ?? "Unbekannt"
+    }
 
 }
 

@@ -2,7 +2,7 @@
 //  Vaccine+CoreDataProperties.swift
 //  HaustierApp
 //
-//  Created by Mobile1 on 16.07.23.
+//  Created by Mobile1 on 20.07.23.
 //
 //
 
@@ -19,7 +19,9 @@ extension Vaccine {
     @NSManaged public var disease: String
     @NSManaged public var lastVaccination: Date?
     @NSManaged public var nextVaccination: Date?
-    @NSManaged public var recommendedAge: Int64
+    @NSManaged public var recommendedAge: String?
+    @NSManaged public var notes: String?
+    @NSManaged public var selected: Bool
     @NSManaged public var pet: PetData?
 
 }

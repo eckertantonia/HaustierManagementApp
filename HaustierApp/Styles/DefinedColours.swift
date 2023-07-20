@@ -10,13 +10,15 @@ import SwiftUI
 
 extension Color {
     
+    static let ui = Custom_UI()
+    
     struct Custom_UI {
         
         let darkGreen = Color("DarkGreen")
         let green = Color("Green")
         let blueWhite = Color("BlueWhite")
         let burntOrange = Color("BurntOrange")
-        let lightBeige = Color("LightBeige")
+        let backgroundColor = Color("LightBeige")
         let lightOrange = Color("LightOrange")
         
     }

@@ -39,6 +39,7 @@ struct ProfileViewTile<Content: View>: View {
             }
             .padding()
         }
+        .listRowBackground(Color.ui.blueWhite)
     }
 }
 

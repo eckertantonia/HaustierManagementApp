@@ -1,0 +1,70 @@
+{
+    "vaccines": [
+      {
+        "disease": "Bordetella-Infektion",
+        "recommendedAge": "ab 3 Wochen",
+        "protectedPeriod": "12",
+        "notes": "Non-Core Impfung"
+      },
+      {
+        "disease": "Dermatophytosen",
+        "recommendedAge": "ab 6-12 Wochen",
+        "protectedPeriod": "9",
+        "notes": "Non-Core Impfung"
+      },
+      {
+        "disease": "Canine Herpesvirus-Infektion",
+        "recommendedAge": "",
+        "protectedPeriod": "",
+        "notes": "Non-Core Impfung. Impfung für junge Zuchthündinnen."
+      },
+      {
+        "disease": "Hepatitis contagiosa canis",
+        "recommendedAge": "",
+        "protectedPeriod": "",
+        "notes": "Non-Core Impfung"
+      },
+      {
+        "disease": "Leptospirose",
+        "recommendedAge": "Lebenswoche 8, 12 und Lebensmonat 15",
+        "protectedPeriod": "12",
+        "notes": "Core Impfung"
+      },
+      {
+        "disease": "Leishmaniose",
+        "recommendedAge": "ab 6 Monaten",
+        "protectedPeriod": "12",
+        "notes": "Non-Core Impfung"
+      },
+      {
+        "disease": "Lyme-Borreliose",
+        "recommendedAge": "",
+        "protectedPeriod": "1 Jahr",
+        "notes": "Non-Core Impfung"
+      },{
+        "disease": "Parainfluenza",
+        "recommendedAge": "ab 3 Wochen",
+        "protectedPeriod": "",
+        "notes": "Non-Core Impfung"
+      },
+      {
+        "disease": "Parvovirose",
+        "recommendedAge": "Lebenswoche 8, 12, 16 und Lebensmonat 15",
+        "protectedPeriod": "",
+        "notes": "Core Impfung"
+      },
+      {
+        "disease": "Staupe",
+        "recommendedAge": "Lebenswoche 8, 12, 16 und Lebensmonat 15",
+        "protectedPeriod": "",
+        "notes": "Core Impfung"
+      },
+      {
+        "disease": "Tollwut",
+        "recommendedAge": "ab 12 Wochen",
+        "protectedPeriod": "",
+        "notes": "2. Impfung 4 Wochen nach der ersten, 3. Impfung 12 Monate nach der ersten Impfung"
+      }
+    ]
+  }
+  

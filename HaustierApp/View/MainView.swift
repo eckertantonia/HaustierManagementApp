@@ -5,6 +5,7 @@
 //  Created by Mobile1 on 30.05.23.
 //
 
+
 import SwiftUI
 
 struct MainView: View {
@@ -44,7 +45,7 @@ struct MainView: View {
                     
                 }
             }
-            .navigationBarTitle("Dashboard", displayMode: .inline)
+//            .navigationBarTitle("Dashboard", displayMode: .inline)
             .toolbar{
                 Button(action:{
                     showMenu.toggle()
@@ -55,12 +56,14 @@ struct MainView: View {
                         .frame(width: 40, height: 40)
                         .padding(.top, 10)
                     })
-            }
+        }
+            .background(Color.ui.backgroundColor)
                 
                 
             
-        }
     }
+        
+}
     
     struct MainView_Previews: PreviewProvider {
         static var previews: some View {

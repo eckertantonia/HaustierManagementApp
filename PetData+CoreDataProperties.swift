@@ -57,6 +57,13 @@ extension PetData {
             $0.medication < $1.medication
         }
     }
+    
+    public var vaccineArray: [Vaccine] {
+        let set = vaccine as? Set<Vaccine> ?? []
+        return set.sorted {
+            $0.disease < $1.disease
+        }
+    }
 
 }
 

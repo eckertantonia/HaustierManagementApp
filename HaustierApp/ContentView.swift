@@ -14,8 +14,10 @@ struct ContentView: View {
     
     //MARK: - ViewBody
     var body: some View {
+        
         MainView(showMenu: false)
 //        Ausprobieren()
+        
         }
     }
     

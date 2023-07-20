@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		B30FC0392A4321BE002A1B26 /* ProfileViewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FC0382A4321BE002A1B26 /* ProfileViewTile.swift */; };
 		B30FC03B2A43251C002A1B26 /* ProfileViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FC03A2A43251C002A1B26 /* ProfileViewVM.swift */; };
+		B3179FD02A694184002A2FA1 /* vaccines.json in Resources */ = {isa = PBXBuildFile; fileRef = B3179FCF2A694184002A2FA1 /* vaccines.json */; };
+		B3179FD32A6941C4002A2FA1 /* VaccineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3179FD22A6941C4002A2FA1 /* VaccineView.swift */; };
+		B3179FD62A69431A002A2FA1 /* RecommendedVaccineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3179FD52A69431A002A2FA1 /* RecommendedVaccineView.swift */; };
+		B3179FD82A69455F002A2FA1 /* VaccineJSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3179FD72A69455F002A2FA1 /* VaccineJSONService.swift */; };
+		B3179FDA2A694955002A2FA1 /* VaccineVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3179FD92A694955002A2FA1 /* VaccineVM.swift */; };
 		B34C25142A261A5500DB3C4E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C25132A261A5500DB3C4E /* ViewModel.swift */; };
 		B34C25172A2626DC00DB3C4E /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C25162A2626DC00DB3C4E /* NavigationBar.swift */; };
 		B34C251A2A262BB800DB3C4E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C25192A262BB800DB3C4E /* MainView.swift */; };
@@ -45,6 +50,9 @@
 		B3A2E5132A65832100C90C99 /* MedicationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E5122A65832100C90C99 /* MedicationVM.swift */; };
 		B3A2E5152A6583A200C90C99 /* EditMedicationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E5142A6583A200C90C99 /* EditMedicationVM.swift */; };
 		B3A2E5182A6585EE00C90C99 /* MedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E5172A6585EE00C90C99 /* MedicationView.swift */; };
+		B3A2E51A2A6587FE00C90C99 /* MedicationTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E5192A6587FE00C90C99 /* MedicationTile.swift */; };
+		B3A2E51C2A65885600C90C99 /* MedicationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E51B2A65885600C90C99 /* MedicationDetailView.swift */; };
+		B3A2E51E2A65890E00C90C99 /* EditMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E51D2A65890E00C90C99 /* EditMedicationView.swift */; };
 		B3B1ADC32A41B132006F12F1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC22A41B132006F12F1 /* CoreDataService.swift */; };
 		B3B1ADC92A41CF74006F12F1 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */; };
 		B3BB75BF2A1D06B70049AD74 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */; };
@@ -72,6 +80,11 @@
 /* Begin PBXFileReference section */
 		B30FC0382A4321BE002A1B26 /* ProfileViewTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTile.swift; sourceTree = "<group>"; };
 		B30FC03A2A43251C002A1B26 /* ProfileViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewVM.swift; sourceTree = "<group>"; };
+		B3179FCF2A694184002A2FA1 /* vaccines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = vaccines.json; path = HaustierApp/Model/vaccines.json; sourceTree = "<group>"; };
+		B3179FD22A6941C4002A2FA1 /* VaccineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineView.swift; sourceTree = "<group>"; };
+		B3179FD52A69431A002A2FA1 /* RecommendedVaccineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedVaccineView.swift; sourceTree = "<group>"; };
+		B3179FD72A69455F002A2FA1 /* VaccineJSONService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineJSONService.swift; sourceTree = "<group>"; };
+		B3179FD92A694955002A2FA1 /* VaccineVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineVM.swift; sourceTree = "<group>"; };
 		B34C25132A261A5500DB3C4E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B34C25162A2626DC00DB3C4E /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		B34C25192A262BB800DB3C4E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -109,6 +122,9 @@
 		B3A2E5122A65832100C90C99 /* MedicationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationVM.swift; sourceTree = "<group>"; };
 		B3A2E5142A6583A200C90C99 /* EditMedicationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedicationVM.swift; sourceTree = "<group>"; };
 		B3A2E5172A6585EE00C90C99 /* MedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationView.swift; sourceTree = "<group>"; };
+		B3A2E5192A6587FE00C90C99 /* MedicationTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTile.swift; sourceTree = "<group>"; };
+		B3A2E51B2A65885600C90C99 /* MedicationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationDetailView.swift; sourceTree = "<group>"; };
+		B3A2E51D2A65890E00C90C99 /* EditMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedicationView.swift; sourceTree = "<group>"; };
 		B3B1ADC22A41B132006F12F1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		B3B1ADC82A41CF74006F12F1 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		B3BB75BE2A1D06B70049AD74 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
@@ -144,6 +160,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3179FD12A6941A2002A2FA1 /* Medication */ = {
+			isa = PBXGroup;
+			children = (
+				B3A2E5172A6585EE00C90C99 /* MedicationView.swift */,
+				B3A2E5192A6587FE00C90C99 /* MedicationTile.swift */,
+				B3A2E51B2A65885600C90C99 /* MedicationDetailView.swift */,
+				B3A2E51D2A65890E00C90C99 /* EditMedicationView.swift */,
+			);
+			path = Medication;
+			sourceTree = "<group>";
+		};
+		B3179FD42A6941FB002A2FA1 /* Vaccine */ = {
+			isa = PBXGroup;
+			children = (
+				B3179FD22A6941C4002A2FA1 /* VaccineView.swift */,
+				B3179FD52A69431A002A2FA1 /* RecommendedVaccineView.swift */,
+			);
+			path = Vaccine;
+			sourceTree = "<group>";
+		};
 		B34C25152A261A5A00DB3C4E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +190,7 @@
 				B3A2E5102A65830300C90C99 /* Food */,
 				B3A2E5112A65830E00C90C99 /* Diagnosis */,
 				B3A2E5162A6583A900C90C99 /* Medication */,
+				B3179FD92A694955002A2FA1 /* VaccineVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -210,7 +247,7 @@
 				B3570A6B2A1BBC7700F9ED41 /* Dashboard.swift */,
 				B3C04AD72A1F9B8B00D92831 /* SideMenu */,
 				B35C8C0A2A261991009CC296 /* Profile */,
-				B3A2E5172A6585EE00C90C99 /* MedicationView.swift */,
+				B3179FD12A6941A2002A2FA1 /* Medication */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +260,7 @@
 				B3A2E4E52A62BE1E00C90C99 /* Food */,
 				B3A2E4E62A62BE3000C90C99 /* PetData */,
 				B3A2E5042A656E4300C90C99 /* Diagnosis */,
+				B3179FD42A6941FB002A2FA1 /* Vaccine */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -327,6 +365,7 @@
 		B3C04AB62A1F8D5300D92831 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B3179FCF2A694184002A2FA1 /* vaccines.json */,
 				B3A2E4E92A62D81800C90C99 /* PetData+CoreDataProperties.swift */,
 				B3C04ABF2A1F98E700D92831 /* FoodIntolerance+CoreDataClass.swift */,
 				B3C04AC02A1F98E700D92831 /* FoodIntolerance+CoreDataProperties.swift */,
@@ -340,6 +379,7 @@
 				B3C04AC92A1F98E700D92831 /* Food+CoreDataClass.swift */,
 				B3C04ACA2A1F98E700D92831 /* Food+CoreDataProperties.swift */,
 				B3EE4F272A530A97007B167F /* BaseModel.swift */,
+				B3179FD72A69455F002A2FA1 /* VaccineJSONService.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -424,6 +464,7 @@
 			files = (
 				B3570A562A16448600F9ED41 /* Preview Assets.xcassets in Resources */,
 				B3570A532A16448600F9ED41 /* Assets.xcassets in Resources */,
+				B3179FD02A694184002A2FA1 /* vaccines.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3A2E51A2A6587FE00C90C99 /* MedicationTile.swift in Sources */,
 				B30FC0392A4321BE002A1B26 /* ProfileViewTile.swift in Sources */,
 				B3B1ADC92A41CF74006F12F1 /* RadioButton.swift in Sources */,
 				B3BB75BF2A1D06B70049AD74 /* SideMenuView.swift in Sources */,
@@ -444,6 +486,7 @@
 				B3A2E5182A6585EE00C90C99 /* MedicationView.swift in Sources */,
 				B34C252A2A28DED700DB3C4E /* PetDataInputView.swift in Sources */,
 				B3A2E4E42A62B8AA00C90C99 /* FoodView.swift in Sources */,
+				B3179FD62A69431A002A2FA1 /* RecommendedVaccineView.swift in Sources */,
 				B3A2E4F72A640EDA00C90C99 /* FoodDetailTile.swift in Sources */,
 				B3C04ACB2A1F98E700D92831 /* FoodIntolerance+CoreDataClass.swift in Sources */,
 				B3C04ACC2A1F98E700D92831 /* FoodIntolerance+CoreDataProperties.swift in Sources */,
@@ -451,11 +494,14 @@
 				B3C04AD12A1F98E700D92831 /* Medication+CoreDataClass.swift in Sources */,
 				B3C04AD52A1F98E700D92831 /* Food+CoreDataClass.swift in Sources */,
 				B3570A582A16448600F9ED41 /* Persistence.swift in Sources */,
+				B3179FDA2A694955002A2FA1 /* VaccineVM.swift in Sources */,
 				B3C04AD32A1F98E700D92831 /* Vaccine+CoreDataClass.swift in Sources */,
 				B3A2E4E82A62D50500C90C99 /* FoodVM.swift in Sources */,
+				B3A2E51C2A65885600C90C99 /* MedicationDetailView.swift in Sources */,
 				B3A2E50A2A65789900C90C99 /* DiagnosisTile.swift in Sources */,
 				B3A2E4F92A6411DD00C90C99 /* EditIntoleranceView.swift in Sources */,
 				B3A2E4FD2A641A2200C90C99 /* FoodDetailView.swift in Sources */,
+				B3179FD32A6941C4002A2FA1 /* VaccineView.swift in Sources */,
 				B3A2E5062A6574CB00C90C99 /* DiagnosisVM.swift in Sources */,
 				B3EE4F282A530A97007B167F /* BaseModel.swift in Sources */,
 				B3F5B0392A372CD90072E890 /* Ausprobieren.swift in Sources */,
@@ -485,12 +531,14 @@
 				B3A2E50C2A65794C00C90C99 /* EditDiagnosisView.swift in Sources */,
 				B34C251E2A263F0E00DB3C4E /* SlideInMenu.swift in Sources */,
 				B34C251A2A262BB800DB3C4E /* MainView.swift in Sources */,
+				B3179FD82A69455F002A2FA1 /* VaccineJSONService.swift in Sources */,
 				B3A2E4FB2A6412AD00C90C99 /* EditFoodIntoleranceVM.swift in Sources */,
 				B3570A4F2A16448500F9ED41 /* HaustierAppApp.swift in Sources */,
 				B35C8C072A20CAA5009CC296 /* ProfileOverview.swift in Sources */,
 				B3C04AD62A1F98E700D92831 /* Food+CoreDataProperties.swift in Sources */,
 				B3A2E5032A656E3E00C90C99 /* DiagnosisView.swift in Sources */,
 				B34C251C2A26364A00DB3C4E /* PetProfileButton.swift in Sources */,
+				B3A2E51E2A65890E00C90C99 /* EditMedicationView.swift in Sources */,
 				B3A2E5082A65785B00C90C99 /* DiagnosisDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
