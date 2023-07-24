@@ -24,11 +24,13 @@ struct PetDataView: View {
         NavigationStack {
             List{
                 Section{
-                    Image(systemName: "pawprint.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 120, height: 120)
-                        .cornerRadius(10)
+                    if let imageData = petDataVM.pet!.profilePicture {
+                        Image(uiImage: UIImage(data: imageData)!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 120, height: 120)
+                            .cornerRadius(10)
+                    }
                 }
                 Section {
                     HStack{

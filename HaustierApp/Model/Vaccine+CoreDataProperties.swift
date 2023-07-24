@@ -23,6 +23,14 @@ extension Vaccine {
     @NSManaged public var notes: String?
     @NSManaged public var selected: Bool
     @NSManaged public var pet: PetData?
+    
+    public var wrappedRecommendedAge: String{
+        recommendedAge ?? ""
+    }
+    
+    public var wrappedNotes: String {
+        notes ?? ""
+    }
 
 }
 

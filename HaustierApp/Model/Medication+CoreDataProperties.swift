@@ -2,7 +2,7 @@
 //  Medication+CoreDataProperties.swift
 //  HaustierApp
 //
-//  Created by Mobile1 on 16.07.23.
+//  Created by Mobile1 on 24.07.23.
 //
 //
 
@@ -23,10 +23,41 @@ extension Medication {
     @NSManaged public var medicationDays: String?
     @NSManaged public var medicationFrequency: Int64
     @NSManaged public var pet: PetData?
+    @NSManaged public var notification: NSSet?
     
     public var wrappedMedicationBrand: String {
         medicationBrand ?? "Unbekannt"
     }
+
+    public var notificationArray: [MedicationAlarm] {
+        get {
+            let set = notification as? Set<MedicationAlarm> ?? []
+            return set.sorted {
+                $0.id < $1.id
+            }
+        }
+        set {
+            notification = NSSet(array: newValue) as NSSet
+        }
+        
+    }
+    
+}
+
+// MARK: Generated accessors for notification
+extension Medication {
+
+    @objc(addNotificationObject:)
+    @NSManaged public func addToNotification(_ value: MedicationAlarm)
+
+    @objc(removeNotificationObject:)
+    @NSManaged public func removeFromNotification(_ value: MedicationAlarm)
+
+    @objc(addNotification:)
+    @NSManaged public func addToNotification(_ values: NSSet)
+
+    @objc(removeNotification:)
+    @NSManaged public func removeFromNotification(_ values: NSSet)
 
 }
 

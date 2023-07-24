@@ -7,9 +7,14 @@
 
 import Foundation
 import CoreData
+//import PhotosUI
+import _PhotosUI_SwiftUI
 
 class PetDataInputViewModel: ObservableObject {
     
+    @Published var selectedPicture: UIImage?
+    @Published var petPicture: PhotosPickerItem?
+    @Published var pictureData: Data?
     @Published var petName: String
     @Published var petBirthDate: Date
     @Published var petGender: String
@@ -29,6 +34,7 @@ class PetDataInputViewModel: ObservableObject {
         
         if pet != nil {
             print("Du hast ein \(pet?.petName) mitgegeben")
+//            self.petPicture = pet?.profilePicture ?? PhotosPickerItem()
             self.petName = pet!.petName
             self.petBirthDate = pet?.dateOfBirth ?? Date.init()
             self.petGender = pet?.gender ?? ""
@@ -44,6 +50,12 @@ class PetDataInputViewModel: ObservableObject {
             } else {
                 self.petHeight = ""
             }
+            if let imageData = pet?.profilePicture {
+                if let uiImage = UIImage(data: imageData) {
+                    self.selectedPicture = uiImage
+                }
+            }
+            
         } else {
             print("du brauchst ein neues Tier")
             self.petName = ""
@@ -70,6 +82,10 @@ class PetDataInputViewModel: ObservableObject {
                 existingPet.placeOfOrigin = petOrigin
                 existingPet.petWeight = Double(petWeight) ?? 0
                 existingPet.petHeight = Double(petHeight) ?? 0
+                if let image = selectedPicture {
+                    existingPet.profilePicture = selectedPicture?.pngData()
+                }
+                
             } else {
                 let pet = PetData(context: context)
                 pet.petName = petName
@@ -79,44 +95,23 @@ class PetDataInputViewModel: ObservableObject {
                 pet.placeOfOrigin = petOrigin
                 pet.petWeight = Double(petWeight) ?? 0
                 pet.petHeight = Double(petHeight) ?? 0
+                if let image = selectedPicture {
+                    pet.profilePicture = selectedPicture?.pngData()
+                }
             }
             try context.save()
         } catch let error as NSError {
             print("Fehler beim Updaten/abspeichern von PetData: \(error)")
         }
     }
-}
     
-//    func save() {
-//        if pet != nil {
-//            do {
-//                pet?.petName = petName
-//                pet?.dateOfBirth = petBirthDate
-//                pet?.gender = petGender
-//                pet?.petBreed = petBreed
-//                pet?.placeOfOrigin = petOrigin
-//                pet?.petWeight = Double(petWeight) ?? 0
-//                pet?.petHeight = Double(petHeight) ?? 0
-//
-//                try pet?.save()
-//            } catch {
-//                print(error)
-//            }
+//    func updatePetPicture(_ image: UIImage?) {
+//        if let image = image {
+//            petPicture = PhotosPickerItem(uiImage: image)
 //        } else {
-//            do {
-//                let pet = PetData(context: context)
-//                pet.petName = petName
-//                pet.dateOfBirth = petBirthDate
-//                pet.gender = petGender
-//                pet.petBreed = petBreed
-//                pet.placeOfOrigin = petOrigin
-//                pet.petWeight = Double(petWeight) ?? 0
-//                pet.petHeight = Double(petHeight) ?? 0
-//
-//                try pet.save()
-//            } catch {
-//                print(error)
-//            }
+//            petPicture = nil
 //        }
 //    }
-//}
+}
+    
+

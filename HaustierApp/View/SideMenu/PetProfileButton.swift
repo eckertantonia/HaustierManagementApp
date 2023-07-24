@@ -9,24 +9,36 @@ import SwiftUI
 
 struct PetProfileButton: View {
     
-    //destination als var
-    // image aus petData (noch nicht im Datenmodell)
-    var image: String = "pawprint"
-    var title: String = "name"
+    private var defaultImage: String = "pawprint"
     var pet: PetData
+    var pictureData: Data?
+    
+    init(pet: PetData, pictureData: Data?) {
+        self.pet = pet
+        self.pictureData = pictureData
+    }
     
     var body: some View {
         NavigationLink(destination: ProfileOverview(pet: pet)){
             VStack{
                 // Pic
-                Image(systemName: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 40, height: 40)
-                    .cornerRadius(10)
+                if let imageData = pictureData {
+                    Image(uiImage: UIImage(data: imageData)!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 40, height: 40)
+                        .cornerRadius(20)
+                } else {
+                    Image(systemName: defaultImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 40, height: 40)
+                        .cornerRadius(10)
+                }
+               
                 //Padding top for Top Close Button
                     //.padding(.top, 50)
-                Text(title)
+                Text(pet.petName)
                     .font(.title3)
                     .padding(.top)
                 

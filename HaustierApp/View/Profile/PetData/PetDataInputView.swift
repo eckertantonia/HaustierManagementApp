@@ -6,20 +6,35 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct PetDataInputView: View {
-    
     @ObservedObject var vm: PetDataInputViewModel
     @Environment(\.dismiss) var dismiss
-    
-    init(vm: PetDataInputViewModel) {
-        self.vm = vm
-    }
+    @State private var showingImagePicker = false
 
-    
     var body: some View {
         NavigationStack {
             Form {
+                Section {
+                    Button("Profilbild auswählen") {
+                        showingImagePicker.toggle()
+                    }
+                    Group{
+                        if let profilePic = vm.selectedPicture {
+                            Image(uiImage: profilePic)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 80, height: 80)
+                        } else {
+                            Image(systemName: "pawprint")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 80, height: 80)
+                        }
+                    }
+                }
+
                 Section {
                     TextField("Name", text: $vm.petName)
                         .disableAutocorrection(true)
@@ -46,23 +61,25 @@ struct PetDataInputView: View {
                         Text("cm")
                     }
                 }
-                Section{
+
+                Section {
                     Button("Speichern") {
                         vm.save()
                         dismiss()
                     }
                     .centerHorizontally()
                 }
-                
             }
             .navigationBarTitle("Tierdaten ändern", displayMode: .inline)
+            .sheet(isPresented: $showingImagePicker) {
+                ImagePicker(image: $vm.selectedPicture)
+            }
         }
     }
-    
-    
-    struct PetDataInputView_Previews: PreviewProvider {
-        static var previews: some View {
-            PetDataInputView(vm: PetDataInputViewModel())
-        }
+}
+
+struct PetDataInputView_Previews: PreviewProvider {
+    static var previews: some View {
+        PetDataInputView(vm: PetDataInputViewModel())
     }
 }

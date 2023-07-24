@@ -40,12 +40,20 @@
         <attribute name="medicationBrand" optional="YES" attributeType="String"/>
         <attribute name="medicationDays" optional="YES" attributeType="String"/>
         <attribute name="medicationFrequency" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="notification" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MedicationAlarm" inverseName="medication" inverseEntity="MedicationAlarm"/>
         <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PetData" inverseName="medication" inverseEntity="PetData"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="medication"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
+    </entity>
+    <entity name="MedicationAlarm" representedClassName="MedicationAlarm" syncable="YES">
+        <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hour" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="minute" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="medication" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medication" inverseName="notification" inverseEntity="Medication"/>
     </entity>
     <entity name="PetData" representedClassName="PetData" syncable="YES">
         <attribute name="dateOfBirth" optional="YES" attributeType="Date" defaultDateTimeInterval="706798740" usesScalarValueType="NO"/>
@@ -55,6 +63,7 @@
         <attribute name="petName" attributeType="String"/>
         <attribute name="petWeight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="placeOfOrigin" optional="YES" attributeType="String"/>
+        <attribute name="profilePicture" optional="YES" attributeType="Binary"/>
         <relationship name="diagnosis" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Diagnosis" inverseName="pet" inverseEntity="Diagnosis"/>
         <relationship name="food" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food" inverseName="pet" inverseEntity="Food"/>
         <relationship name="foodIntolerance" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FoodIntolerance" inverseName="pet" inverseEntity="FoodIntolerance"/>

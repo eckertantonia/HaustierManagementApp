@@ -16,10 +16,7 @@ struct RecommendedVaccineView: View {
     var body: some View {
         List{
             ForEach(vaccineVM.JSONvaccines, id: \.disease){ vaccine in
-                Toggle(vaccine.disease, isOn: vaccineVM.isToggled(for: vaccine))
-                    .onAppear{
-                        print(vaccine)
-                    }
+                Toggle(vaccine.disease, isOn: vaccineVM.isToggled(for: vaccine.disease))
             }
         }
     }

@@ -27,8 +27,7 @@ struct SlideInMenu: View {
             ScrollView(.horizontal) {
                 HStack{
                     ForEach(slideInMenuVM.pets, id: \.self){ pet in
-                        PetProfileButton(image: "pawprint.fill", title: pet.petName, pet: pet.petData
-                        )
+                        PetProfileButton(pet: pet.petData, pictureData: pet.pictureData)
                     }.onDelete(perform: deletePetData)
                     
                     // newPet Button

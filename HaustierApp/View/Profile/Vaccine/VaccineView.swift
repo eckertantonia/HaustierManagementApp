@@ -40,7 +40,13 @@ extension VaccineView {
                 .font(.title2)
             List{
                 ForEach(vaccineVM.vaccineArray, id: \.self) { vaccine in
-                    Text(vaccine.disease)
+                    NavigationLink(destination: {VaccineDetailView(vaccine: vaccine, vaccineVM: vaccineVM)
+                    }, label: {
+                        HStack{
+                            Text(vaccine.disease)
+                            Spacer()
+                        }
+                    })
                 }
             }
         }

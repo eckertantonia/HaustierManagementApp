@@ -71,4 +71,8 @@ struct PetViewModel: Identifiable, Hashable {
     var petName: String {
         petData.petName
     }
+    
+    var pictureData: Data? {
+        petData.profilePicture
+    }
 }

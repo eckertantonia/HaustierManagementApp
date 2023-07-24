@@ -2,7 +2,7 @@
 //  PetData+CoreDataProperties.swift
 //  HaustierApp
 //
-//  Created by Mobile1 on 15.07.23.
+//  Created by Mobile1 on 21.07.23.
 //
 //
 
@@ -23,6 +23,7 @@ extension PetData {
     @NSManaged public var petName: String
     @NSManaged public var petWeight: Double
     @NSManaged public var placeOfOrigin: String?
+    @NSManaged public var profilePicture: Data?
     @NSManaged public var diagnosis: NSSet?
     @NSManaged public var food: NSSet?
     @NSManaged public var foodIntolerance: NSSet?
