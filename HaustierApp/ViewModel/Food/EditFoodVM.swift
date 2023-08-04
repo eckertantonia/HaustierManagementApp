@@ -26,16 +26,13 @@ class EditFoodVM: ObservableObject {
         self.pet = pet
         
         if food != nil {
-            print("Du hast ein Food mitgegeben")
             self.food = food!
             self.foodBrand = food?.foodBrand ?? ""
             self.foodProduct = food?.foodProduct ?? ""
             self.foodAmount = String(food?.foodAmount ?? 0)
             self.foodType = food?.foodType ?? ""
-            print(food)
             
         } else {
-            print("neues Food")
             self.food = Food(context: context)
             self.foodBrand = ""
             self.foodProduct = ""
@@ -62,7 +59,7 @@ class EditFoodVM: ObservableObject {
             }
             try context.save()
         } catch let error as NSError {
-            print("Fehler beim Updaten/abspeichern von PetData: \(error)")
+            print("Fehler beim Updaten/abspeichern von Food: \(error)")
         }
     }
     

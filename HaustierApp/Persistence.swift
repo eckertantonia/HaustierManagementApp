@@ -55,13 +55,6 @@ struct PersistenceManager {
         self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
     }
     
-    // helper
-    func deleteAll() {
-          let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = PetData.fetchRequest()
-          let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
-          _ = try? container.viewContext.execute(batchDeleteRequest1)
-    }
-    
     func save() {
         let context = container.viewContext
         

@@ -23,22 +23,23 @@ struct FoodView: View {
     }
     
     var body: some View {
-        NavigationStack{
-            foodPart
-            intolerancePart
-                .navigationBarTitle(title)
-                .sheet(isPresented: $showingAddFood){
-                    // AddFoodView
-                    EditFoodView(vm: EditFoodVM(pet: pet))
-                }
-                .sheet(isPresented: $showingAddIntolerances){
-                    // AddIntolerancesView
-                    EditIntoleranceView(pet: pet)
-                }
-            
+        CustomNavigationView{
+            VStack{
+                foodPart
+                intolerancePart
+            }
+            .navigationBarTitle(title, displayMode: .inline)
+            .sheet(isPresented: $showingAddFood){
+                // AddFoodView
+                EditFoodView(vm: EditFoodVM(pet: pet))
+            }
+            .sheet(isPresented: $showingAddIntolerances){
+                // AddIntolerancesView
+                EditIntoleranceView(pet: pet)
+            }
         }
-        
-            
+        .pet(pet: foodVM.pet)
+
     }
 }
 
@@ -47,24 +48,29 @@ extension FoodView {
     var foodPart: some View {
         VStack{
             HStack{
-                Text(title)
-                    .font(.title)
-                    .padding()
                 Spacer()
                 Button (
                     action:{
                         showingAddFood.toggle()
                     }, label: {
                         Image(systemName: "plus")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 20, height: 20)
+                            .tint(Color.custom.darkGreen)
                     }
-                    
                 )
-                .padding()
+                .padding(.top, 10)
             }
-            List{
+            .padding(.horizontal, 25)
+            CustomListe{
                 ForEach(foodVM.foodArray, id: \.self){ food in
-//                    Text(food.wrappedFoodBrand + " " + food.wrappedFoodProduct)
                     FoodDetailTile(food: food)
+                    
+                }
+                
+                if foodVM.foodArray.isEmpty {
+                    Spacer()
                 }
             }
         }
@@ -80,29 +86,42 @@ extension FoodView {
             HStack{
                 Text("Unverträglichkeiten")
                     .font(.title)
+                    .darkgreenText()
                     .padding()
                 Spacer()
                 Button (
                     action:{
                         showingAddIntolerances.toggle()
-                    }, label: {
+                    },label: {
                         Image(systemName: "plus")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 20, height: 20)
+                            .tint(Color.custom.darkGreen)
                     }
-                    
                 )
-                .padding()
             }
-            List{
+            .padding(.horizontal, 25)
+            
+            CustomListe{
                 ForEach(foodVM.intoleranceArray, id: \.self){ intolerance in
-                    Text(intolerance.intolerance)
+                    ZStack(alignment: .leading){
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(Color.custom.lightOrange)
+                        Text("- \(intolerance.intolerance)")
+                            .darkgreenText()
+                            .padding(.vertical, 5)
+                            .padding(.leading, 10)
+                        
+                            
+                    }
+                    .padding(.all, 5)
+                }
+                
+                if foodVM.intoleranceArray.isEmpty {
+                    Spacer()
                 }
             }
         }
     }
 }
-
-//struct FoodView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FoodView()
-//    }
-//}

@@ -18,25 +18,31 @@ struct EditDiagnosisView: View {
     }
     
     var body: some View {
-        Form{
+        InputForm(title: "Diagnose") {
+            CustomTextFieldSection(title: "Bezeichnung", text: $editDiagnosisVM.diagnosisDescription)
             Section{
-                TextField("Bezeichnung", text: $editDiagnosisVM.diagnosisDescription)
-                    .disableAutocorrection(true)
-                DatePicker(selection: $editDiagnosisVM.diagnosisDate, in: ...Date.now, displayedComponents: .date){
-                    Text("Datum")
+                HStack{
+                    Spacer()
+                    DatePicker(selection: $editDiagnosisVM.diagnosisDate, in: ...Date.now, displayedComponents: .date){
+                        Text("Datum")
+                            .labelsHidden()
+                    }
+                    Spacer()
                 }
-                TextField("Tierarzt", text: $editDiagnosisVM.veterinarian)
-                    .disableAutocorrection(true)
+            } header: {
+                Text("Diagnostiziert am")
+                    .darkgreenText()
+                    .font(.body)
+            }
+            CustomTextFieldSection(title: "Tierarzt", text: $editDiagnosisVM.veterinarian)
+            Section {
                 TextEditor(text: $editDiagnosisVM.diagnosisNotes)
                     .padding(.horizontal)
+                    .frame(minHeight: 100)
+            } header: {
+                Text("Notizen")
             }
-            Section{
-                Button("Speichern") {
-                    editDiagnosisVM.save()
-                    dismiss()
-                }
-                .centerHorizontally()
-            }
+            SaveButton(saveFunc: editDiagnosisVM.save, dismiss: dismiss)
         }
     }
 }

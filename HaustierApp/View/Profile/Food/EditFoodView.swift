@@ -17,34 +17,16 @@ struct EditFoodView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            Form{
-                Section{
-                    TextField("Marke", text: $editFoodVM.foodBrand)
-                        .disableAutocorrection(true)
-                    TextField("Produkt", text: $editFoodVM.foodProduct)
-                        .disableAutocorrection(true)
-                    Picker("", selection: $editFoodVM.foodType) {
-                        ForEach(editFoodVM.foodTypes, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                    TextField("Menge in gramm", text: $editFoodVM.foodAmount)
-                }
-                Section{
-                    Button("Speichern") {
-                        editFoodVM.save()
-                        dismiss()
-                    }
-                    .centerHorizontally()
+        InputForm(title: "Futter") {
+            CustomTextFieldSection(title: "Marke", text: $editFoodVM.foodBrand)
+            CustomTextFieldSection(title: "Produkt", text: $editFoodVM.foodProduct)
+            Picker("", selection: $editFoodVM.foodType) {
+                ForEach(editFoodVM.foodTypes, id: \.self) {
+                    Text($0)
                 }
             }
+            CustomTextFieldSection(title: "Menge", optionalText: "gramm", text: $editFoodVM.foodAmount)
+            SaveButton(saveFunc: editFoodVM.save, dismiss: dismiss)
         }
     }
 }
-
-//struct EditFoodView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditFoodView()
-//    }
-//}

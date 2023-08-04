@@ -16,26 +16,9 @@ struct EditIntoleranceView: View {
         self.editIntoleranceVM = EditFoodIntoleranceVM(pet: pet)
     }
     var body: some View {
-        NavigationStack{
-            Form{
-                Section{
-                    TextField("neue Unverträglichkeit", text: $editIntoleranceVM.foodIntolerance)
-                        .disableAutocorrection(true)
-                }
-                Section{
-                    Button("Speichern") {
-                        editIntoleranceVM.save()
-                        dismiss()
-                    }
-                    .centerHorizontally()
-                }
-            }
+        InputForm(title: "Neue Unverträglichkeit"){
+            CustomTextFieldSection(title: "Unverträglichkeit", text: $editIntoleranceVM.foodIntolerance)
+            SaveButton(saveFunc: editIntoleranceVM.save, dismiss: dismiss)
         }
-    }
-}
-
-struct EditIntoleranceView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditIntoleranceView(pet: PetData())
     }
 }

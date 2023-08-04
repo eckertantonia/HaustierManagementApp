@@ -20,13 +20,13 @@ class PetDataViewModel: NSObject, ObservableObject{
         
         let fetchRequest: NSFetchRequest<PetData> = PetData.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "petName", ascending: true)]
-        
+
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
+
         super.init()
-        
+
         fetchedResultsController.delegate = self
-        
+
         do {
             try fetchedResultsController.performFetch()
         } catch {

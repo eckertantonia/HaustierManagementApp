@@ -34,11 +34,11 @@ class EditMedicationVM: ObservableObject {
         self.notificationCenter = UNUserNotificationCenter.current()
         
         self.medication = medication ?? Medication(context: context)
-        self.medicationName = medication?.medication ?? ""
+        self.medicationName = medication?.wrappedMedicationName ?? ""
         self.medicationBrand = medication?.medicationBrand ?? ""
         self.medicationAmount = String(medication?.medicationAmount ?? 0)
         self.addAlarm = medication?.medicationAlarm ?? false
-        if ((medication?.notificationArray.isEmpty) != nil) {
+        if medication?.notificationArray.count ?? 0 > 0 {
             var comps = DateComponents()
             comps.hour = Int(medication!.notificationArray[0].hour)
             comps.minute = Int(medication!.notificationArray[0].minute)
@@ -83,7 +83,7 @@ class EditMedicationVM: ObservableObject {
     private func addNotification(_ alarm: MedicationAlarm){
         let content = UNMutableNotificationContent()
         content.title = "HaustierApp"
-        content.body = "\(pet.petName) braucht jetzt \(medicationName)!"
+        content.body = "\(pet.petName) braucht jetzt \(medicationName)! (\(alarm.day)"
         content.sound = .default
         
         var dateComps = DateComponents()
@@ -92,7 +92,7 @@ class EditMedicationVM: ObservableObject {
         dateComps.weekday = Int(alarm.day)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComps, repeats: true)
         
-        let request = UNNotificationRequest(identifier: alarm.id.uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         notificationCenter.add(request)
         
     }
@@ -109,6 +109,10 @@ class EditMedicationVM: ObservableObject {
         let fetchRequest: NSFetchRequest<PetData> = PetData.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "petName == %@", pet.petName)
         
+        if medicationName == "" {
+            return
+        }
+        
         do {
             let results = try context.fetch(fetchRequest)
             if let existingPet = results.first {
@@ -116,15 +120,15 @@ class EditMedicationVM: ObservableObject {
                 medication.medication = medicationName
                 medication.medicationBrand = medicationBrand
                 medication.medicationAmount = Int64(medicationAmount) ?? 0
-                medication.pet = pet
+                medication.pet = existingPet
                 medication.medicationAlarm = addAlarm
                 var alarms = [MedicationAlarm]()
                 if addAlarm {
                     
                     for day in selectedDays{
-                        var alarm = MedicationAlarm(context: context)
+                        let alarm = MedicationAlarm(context: context)
                         alarm.medication = medication
-                        var dateComps = Calendar(identifier: .gregorian).dateComponents([.hour, .minute], from: selectedTime)
+                        let dateComps = Calendar(identifier: .gregorian).dateComponents([.hour, .minute], from: selectedTime)
                         alarm.day = Int16(day)
                         alarm.hour = Int16(dateComps.hour!)
                         alarm.minute = Int16(dateComps.minute!)
@@ -132,13 +136,14 @@ class EditMedicationVM: ObservableObject {
                         alarms.append(alarm)
                         addNotification(alarm)
                     }
+                } else {
+                    alarms.removeAll()
                 }
                 medication.notificationArray = alarms
-                print(medication)
             }
             try context.save()
         } catch let error as NSError {
-            print("Fehler beim Updaten/abspeichern von PetData: \(error)")
+            print("Fehler beim Updaten/abspeichern von Medication: \(error)")
         }
     }
 }

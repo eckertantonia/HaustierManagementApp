@@ -19,7 +19,6 @@ class EditFoodIntoleranceVM: ObservableObject {
     init(pet: PetData) {
         self.context = PersistenceManager.shared.container.viewContext
         self.pet = pet
-        print("neue Unverträglichkeit")
         self.foodIntolerance = ""
         
     }

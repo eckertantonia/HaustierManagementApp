@@ -7,44 +7,51 @@
 
 import SwiftUI
 
-struct ProfileViewTile<Content: View>: View {
+struct ProfileViewTile: View {
     
     var tileTitle: String
-    var tileDetails: ArraySlice<String>
-    var destinationView: Content
+    @State var tileDetails: [String]
+    var profileVM : ProfileViewVM
+    
+    var tileHeight = UIScreen.main.bounds.width*0.2
     
     
-    init(tileDetails: [String], @ViewBuilder destinationView: () -> Content) {
-        self.tileTitle = tileDetails[0]
-        self.tileDetails = tileDetails.dropFirst(1)// array except first
-        self.destinationView = destinationView()
-        
+    init(title: String, vm: ProfileViewVM) {
+        self.tileTitle = title
+        self.tileDetails = [String]()
+        self.profileVM = vm
     }
     
     var body: some View {
-        NavigationLink(destination: destinationView){
             HStack{
-                VStack {
+                VStack(alignment: .leading){
                     Text(tileTitle)
-                        .multilineTextAlignment(.leading)
-                        .font(.title)
+                        .font(.title2)
+                        .bold()
+                        .darkgreenText()
                     Spacer()
                 }
                 Spacer()
                 VStack(alignment: .trailing){
                     ForEach(tileDetails, id: \.self){ detail in
+                        Spacer()
                         Text(detail)
+                            .darkgreenText()
+                            .multilineTextAlignment(.trailing)
+                            
                     }
                 }
+                Image(systemName: "chevron.forward")
+                    .tint(Color.custom.darkGreen)
             }
-            .padding()
+            .frame(height: tileHeight)
+            .padding(.vertical, 10)
+            .padding(.horizontal, 10)
+            .lightOrangeBackground()
+            .frame(width: UIScreen.main.bounds.width*0.9)
+            .cornerRadius(10)
+            .onAppear{
+                tileDetails = profileVM.tileDetails(tileTitle: tileTitle)
+            }
         }
-        .listRowBackground(Color.ui.blueWhite)
-    }
-}
-
-struct ProfileViewTile_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileViewTile<AnyView>(tileDetails: ["title", "detail"], destinationView: {AnyView(PetDataView(pet: PetData(), title: "Titel"))})
-    }
 }

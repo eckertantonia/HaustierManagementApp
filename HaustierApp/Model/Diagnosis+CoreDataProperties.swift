@@ -17,10 +17,14 @@ extension Diagnosis {
     }
 
     @NSManaged public var diagnosisDate: Date?
-    @NSManaged public var diagnosisDescription: String
+    @NSManaged public var diagnosisDescription: String?
     @NSManaged public var diagnosisNotes: String?
     @NSManaged public var veterinarian: String?
     @NSManaged public var pet: PetData?
+    
+    public var wrappedDescription: String {
+        diagnosisDescription ?? ""
+    }
     
     public var wrappedVeterinarian: String {
         veterinarian ?? ""

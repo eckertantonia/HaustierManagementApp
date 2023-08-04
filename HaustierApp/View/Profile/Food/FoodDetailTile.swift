@@ -18,24 +18,29 @@ struct FoodDetailTile: View {
             VStack{
                 HStack{
                     Text(food.foodProduct)
+                        .darkgreenText()
+                        .font(.title3)
                     Spacer()
                 }
                 HStack{
                     Text(food.wrappedFoodBrand)
+                        .darkgreenText()
+                        .font(.footnote)
                     Spacer()
                 }
                 HStack{
                     Spacer()
                     Text(String(food.foodAmount))
+                        .darkgreenText()
                 }
             }
+            
         })
+        .padding(.vertical, 10)
+        .padding(.horizontal, 20)
+        .lightOrangeBackground()
+        .frame(width: UIScreen.main.bounds.width*0.9)
+        .cornerRadius(10)
         
-    }
-}
-
-struct FoodDetailTile_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodDetailTile(food: Food())
     }
 }

@@ -10,22 +10,12 @@ import CoreData
 
 struct ContentView: View {
     
-//    @Environment(\.managedObjectContext) var viewContext
-    
-    //MARK: - ViewBody
     var body: some View {
         
-        MainView(showMenu: false)
-//        Ausprobieren()
+        CustomNavigationView{
+            Dashboard()
+        }
         
-        }
     }
-    
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-            
-        }
-    }
+}
 

@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-class ProfileViewVM {
+class ProfileViewVM: ObservableObject {
     
     let pet: PetData
     let tiles: [String]
@@ -23,8 +24,6 @@ class ProfileViewVM {
         switch tileTitle{
         case tiles[0]:
             // Tierdaten
-            // add Tile Title
-            tileDetails.append(tiles[0])
             // add Details
             tileDetails.append(pet.petName)
             tileDetails.append(pet.petBreed ?? "unbekannt") // breed is not necessarily known
@@ -37,25 +36,33 @@ class ProfileViewVM {
             }
         case tiles[1]:
             // Futter
-            // add Tile Title
-            tileDetails.append(tiles[1])
-            // TODO
-            
+            break
         case tiles[2]:
             //Diagnose
-            // add Tile Title
-            tileDetails.append(tiles[2])
-            // TODO
+            // Anzahl Diagnosen
+            if pet.diagnosisArray.count == 1 {
+                tileDetails.append(String(pet.diagnosisArray.count)+" Diagnose")
+            } else if pet.diagnosisArray.count == 0 {
+                tileDetails.append("keine Diagnosen")
+            } else {
+                tileDetails.append(String(pet.diagnosisArray.count)+" Diagnosen")
+            }
+            
         case tiles[3]:
             // Medikamente
-            // add Tile Title
-            tileDetails.append(tiles[3])
-            //TODO
+            // Anzahl Medikamente
+            if pet.medicationArry.count == 1 {
+                tileDetails.append(String(pet.medicationArry.count)+" Medikament")
+            } else if pet.medicationArry.count == 0 {
+                tileDetails.append("keine Medikamente")
+            } else {
+                tileDetails.append(String(pet.medicationArry.count)+" Medikamente")
+            }
+            
         case tiles[4]:
             // Impfungen
-            // add Tile Title
-            tileDetails.append(tiles[4])
             // TODO
+            break
         default:
             break
         }

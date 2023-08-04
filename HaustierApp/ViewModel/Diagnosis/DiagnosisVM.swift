@@ -14,7 +14,7 @@ class DiagnosisVM: NSObject, ObservableObject {
     @Published var diagnosisArray: [Diagnosis]
     
     private let fetchedResultsController: NSFetchedResultsController<PetData>
-    private var pet: PetData
+    var pet: PetData
     
     init(pet: PetData){
         self.context = PersistenceManager.shared.container.viewContext
@@ -45,13 +45,12 @@ class DiagnosisVM: NSObject, ObservableObject {
             return
         }
         self.diagnosisArray = objects.first(where: {$0.petName == name})?.diagnosisArray ?? []
+        print("diagnosisArray \(diagnosisArray)")
     }
 }
 
 extension DiagnosisVM: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.diagnosisArray = fetchedResultsController.fetchedObjects?.first?.diagnosisArray ?? []
-        print("petname \(fetchedResultsController.fetchedObjects?.first?.petName)")
-        print("foodArray \(diagnosisArray)")
     }
 }

@@ -19,23 +19,11 @@ struct VaccineDetailView: View {
     
     
     var body: some View {
-        VStack{
+        DetailView(pet: vaccine.pet!, pageTitle: vaccine.disease, sheet: AnyView(EmptyView()), canEdit: false) {
+            CustomLabeledContent(label: "Krankheit", value: vaccine.disease)
+            CustomLabeledContent(label: "empfohlenes Alter", value: vaccine.wrappedRecommendedAge)
             HStack{
-                Text(vaccine.disease)
-                    .font(.title)
-                    .padding()
-                
-            }
-            HStack{
-                Text("Krankheit")
-                Text(vaccine.disease)
-            }
-            HStack{
-                Text("empfohlenes Alter")
-                Text(vaccine.wrappedRecommendedAge)
-            }
-            HStack{
-//                Text("letzte Impfung")
+                CustomLabeledContent(label: "Letzte Impfung", value: "")
                 DatePicker(selection: $vaccineVM.selectedDate, in: ...Date.now, displayedComponents: .date){
                     Text("letzte Impfung")
                 }
@@ -43,23 +31,16 @@ struct VaccineDetailView: View {
                     vaccineVM.updateVaccinationDate(vaccine: vaccine)
                 }
             }
-            .padding()
             HStack{
-                Text("nächste Impfung")
-//                if let nextDate = $vm.nextVaccinationDate {
-                if let nextDate = vaccineVM.nextVaccinationDate {
-                    Text(nextDate)
+                if let nextDate = vaccine.nextVaccination {
+                    CustomLabeledContent(label: "nächste Impfung", value: dateFormatter.string(from: nextDate))
                 } else {
-                    Text(dateFormatter.string(from: vaccine.nextVaccination ?? Date()))
+                    CustomLabeledContent(label: "nächste Impfung", value: "-")
                 }
-                
-               
             }
-            VStack{
-                Text("Informationen")
-                Text(vaccine.wrappedNotes)
-            }
+            CustomLabeledContent(label: "Informationen", value: vaccine.wrappedNotes)
         }
+
     }
 }
 
@@ -68,11 +49,5 @@ extension VaccineDetailView {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM yyyy"
         return formatter
-    }
-}
-
-struct VaccineDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        VaccineDetailView(vaccine: Vaccine(), vaccineVM: VaccineVM(pet: PetData()))
     }
 }

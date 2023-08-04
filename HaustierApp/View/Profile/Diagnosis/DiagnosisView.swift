@@ -24,33 +24,36 @@ struct DiagnosisView: View {
     
     
     var body: some View {
-        NavigationStack{
+        CustomNavigationView{
             VStack{
                 HStack{
-                    Text(title)
-                        .font(.title)
-                        .padding()
                     Spacer()
                     Button (
                         action:{
                             showingAddDiagnosis.toggle()
                         }, label: {
                             Image(systemName: "plus")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 20, height: 20)
+                                .tint(Color.custom.darkGreen)
                         }
                         
                     )
                     .padding()
                 }
+                .padding(.horizontal, 10)
                 
                 diagnosisList
             }
+            .navigationBarTitle(title, displayMode: .inline)
             .sheet(isPresented: $showingAddDiagnosis){
                 EditDiagnosisView(vm: EditDiagnosisVM(pet: pet))
-//                EmptyView()
             }
             
             
         }
+        .pet(pet: diagnosisVM.pet)
         
     }
 }
@@ -58,16 +61,13 @@ struct DiagnosisView: View {
 extension DiagnosisView {
     
     var diagnosisList: some View {
-        List{
+        CustomListe{
             ForEach(diagnosisVM.diagnosisArray, id: \.self) { diagnosis in
                 DiagnosisTile(diagnosis: diagnosis)
+            }
+            if diagnosisVM.diagnosisArray.isEmpty {
+                Spacer()
             }
         }
     }
 }
-
-//struct DiagnosisView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DiagnosisView()
-//    }
-//}

@@ -16,4 +16,18 @@ extension View {
             Spacer()
         }
     }
+    
+    func lightOrangeBackground() -> some View {
+        self.background(Color.custom.lightOrange)
+    }
+}
+
+extension Text {
+    func darkgreenText() -> some View {
+        self.foregroundColor(Color.custom.darkGreen)
+    }
+}
+
+extension LabeledContentStyle where Self == CustomLabeledContentStyle {
+    static var centered: CustomLabeledContentStyle { .init() }
 }

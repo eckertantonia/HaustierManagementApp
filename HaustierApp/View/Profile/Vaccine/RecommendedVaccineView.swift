@@ -14,16 +14,22 @@ struct RecommendedVaccineView: View {
     @ObservedObject var vaccineVM: VaccineVM
     
     var body: some View {
-        List{
-            ForEach(vaccineVM.JSONvaccines, id: \.disease){ vaccine in
-                Toggle(vaccine.disease, isOn: vaccineVM.isToggled(for: vaccine.disease))
+        NavigationStack{
+            CustomListe{
+                ForEach(vaccineVM.JSONvaccines, id: \.disease){ vaccine in
+                    ZStack(alignment: .leading){
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(Color.custom.lightOrange)
+                        Toggle(vaccine.disease, isOn: vaccineVM.isToggled(for: vaccine.disease))
+                            .tint(Color.custom.green)
+                            .foregroundColor(Color.custom.darkGreen)
+                            .padding(.horizontal, 15)
+                    }
+                    .padding(.all, 5)
+                    
+                }
             }
+            .navigationBarTitle("Empfohlene Impfungen", displayMode: .automatic)
         }
-    }
-}
-
-struct RecommendedVaccineView_Previews: PreviewProvider {
-    static var previews: some View {
-        RecommendedVaccineView(vaccineVM: VaccineVM(pet: PetData()))
     }
 }

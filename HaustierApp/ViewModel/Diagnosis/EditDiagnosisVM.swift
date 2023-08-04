@@ -30,22 +30,15 @@ class EditDiagnosisVM: ObservableObject {
         self.veterinarian = diagnosis?.veterinarian ?? ""
         self.diagnosisNotes = diagnosis?.diagnosisNotes ?? ""
         
-//        if diagnosis != nil {
-//            print("diagnose mitgegeben")
-//            self.diagnosis = diagnosis!
-//            self.diagnosisDescription = diagnosis?.diagnosisDescription
-//            self.diagnosisDate = diagnosis?.diagnosisDate
-//            self.veterinarian = diagnosis?.veterinarian
-//            self.diagnosisNotes = diagnosis?.diagnosisNotes
-//            print(diagnosis)
-//        } else {
-//
-//        }
     }
     
     func save(){
         let fetchRequest: NSFetchRequest<PetData> = PetData.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "petName == %@", pet.petName)
+        
+        if diagnosisDescription == "" {
+            return
+        }
         
         do {
             let results = try context.fetch(fetchRequest)
@@ -55,12 +48,11 @@ class EditDiagnosisVM: ObservableObject {
                 diagnosis.diagnosisDate = diagnosisDate
                 diagnosis.veterinarian = veterinarian
                 diagnosis.diagnosisNotes = diagnosisNotes
-                diagnosis.pet = pet
-                print(diagnosis)
+                diagnosis.pet = existingPet
             }
             try context.save()
         } catch let error as NSError {
-            print("Fehler beim Updaten/abspeichern von PetData: \(error)")
+            print("Fehler beim Updaten/abspeichern von Diagnosis: \(error)")
         }
     }
 }

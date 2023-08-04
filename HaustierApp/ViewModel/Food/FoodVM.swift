@@ -17,7 +17,7 @@ class FoodVM: NSObject, ObservableObject{
     @Published var intoleranceArray: [FoodIntolerance]
     
     private let fetchedResultsController: NSFetchedResultsController<PetData>
-    private var pet: PetData
+    var pet: PetData
     
     init(pet: PetData) {
         self.context = PersistenceManager.shared.container.viewContext
@@ -59,9 +59,6 @@ extension FoodVM: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.foodArray = fetchedResultsController.fetchedObjects?.first?.foodArray ?? []
         self.intoleranceArray = fetchedResultsController.fetchedObjects?.first?.intoleranceArray ?? []
-        print("petname \(fetchedResultsController.fetchedObjects?.first?.petName)")
-        print("foodArray \(foodArray)")
-        print("intoleranceArray \(intoleranceArray)")
     }
 }
 

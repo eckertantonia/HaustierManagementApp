@@ -2,7 +2,7 @@
 //  Medication+CoreDataProperties.swift
 //  HaustierApp
 //
-//  Created by Mobile1 on 24.07.23.
+//  Created by Mobile1 on 04.08.23.
 //
 //
 
@@ -16,14 +16,18 @@ extension Medication {
         return NSFetchRequest<Medication>(entityName: "Medication")
     }
 
-    @NSManaged public var medication: String
+    @NSManaged public var medication: String?
     @NSManaged public var medicationAlarm: Bool
     @NSManaged public var medicationAmount: Int64
     @NSManaged public var medicationBrand: String?
     @NSManaged public var medicationDays: String?
     @NSManaged public var medicationFrequency: Int64
-    @NSManaged public var pet: PetData?
     @NSManaged public var notification: NSSet?
+    @NSManaged public var pet: PetData?
+    
+    public var wrappedMedicationName: String {
+        medication ?? ""
+    }
     
     public var wrappedMedicationBrand: String {
         medicationBrand ?? "Unbekannt"
@@ -41,7 +45,7 @@ extension Medication {
         }
         
     }
-    
+
 }
 
 // MARK: Generated accessors for notification

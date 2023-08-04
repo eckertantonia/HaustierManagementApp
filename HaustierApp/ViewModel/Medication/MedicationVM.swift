@@ -14,7 +14,7 @@ class MedicationVM: NSObject, ObservableObject {
     @Published var medicationArray: [Medication]
     
     private let fetchedResultsController: NSFetchedResultsController<PetData>
-    private var pet: PetData
+    var pet: PetData
     
     init(pet: PetData){
         self.context = PersistenceManager.shared.container.viewContext
@@ -51,8 +51,6 @@ class MedicationVM: NSObject, ObservableObject {
 extension MedicationVM: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.medicationArray = fetchedResultsController.fetchedObjects?.first?.medicationArry ?? []
-        print("petname \(fetchedResultsController.fetchedObjects?.first?.petName)")
-        print("medicationArray \(medicationArray)")
     }
 }
 

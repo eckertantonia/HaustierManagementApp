@@ -40,9 +40,3 @@ struct ToggleDays: View {
             .navigationBarTitle("Wecker hinzufügen")        }
     }
 }
-
-//struct ToggleDays_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ToggleDays()
-//    }
-//}

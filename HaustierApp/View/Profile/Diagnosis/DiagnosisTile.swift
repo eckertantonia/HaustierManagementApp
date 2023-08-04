@@ -12,21 +12,15 @@ struct DiagnosisTile: View {
     var diagnosis: Diagnosis
     
     var body: some View {
-        NavigationLink(destination: {
-            DiagnosisDetailView(diagnosis: diagnosis)
-        }, label: {
+        DetailTile(nextPage: AnyView(DiagnosisDetailView(diagnosis: diagnosis))){
             VStack{
                 HStack{
-                    Text(diagnosis.diagnosisDescription)
+                    Text(diagnosis.wrappedDescription)
+                        .darkgreenText()
+                        .bold()
                     Spacer()
                 }
             }
-        })
+        }
     }
 }
-
-//struct DiagnosisTile_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DiagnosisTile()
-//    }
-//}

@@ -14,72 +14,69 @@ struct PetDataInputView: View {
     @State private var showingImagePicker = false
 
     var body: some View {
-        NavigationStack {
-            Form {
-                Section {
-                    Button("Profilbild auswählen") {
-                        showingImagePicker.toggle()
-                    }
-                    Group{
-                        if let profilePic = vm.selectedPicture {
-                            Image(uiImage: profilePic)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 80, height: 80)
-                        } else {
-                            Image(systemName: "pawprint")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 80, height: 80)
-                        }
+        InputForm(title: "Tierdaten") {
+            Section {
+                Button {
+                    showingImagePicker.toggle()
+                } label: {
+                    if let profilePic = vm.selectedPicture {
+                        Image(uiImage: profilePic)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80, height: 80)
+                    } else {
+                        Image(systemName: "pawprint")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80, height: 80)
                     }
                 }
-
-                Section {
-                    TextField("Name", text: $vm.petName)
-                        .disableAutocorrection(true)
+            } header: {
+                Text("Profilbild auswählen")
+                    .darkgreenText()
+                    .font(.body)
+            }
+            
+            CustomTextFieldSection(title: "Name", text: $vm.petName)
+            
+            Section{
+                HStack{
+                    Spacer()
                     DatePicker(selection: $vm.petBirthDate, in: ...Date.now, displayedComponents: .date) {
                         Text("Geburtstag")
                     }
-                    Picker("Geschlecht", selection: $vm.petGender) {
-                        ForEach(vm.genderList, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                    TextField("Rasse", text: $vm.petBreed)
-                        .disableAutocorrection(true)
-                    TextField("Herkunft", text: $vm.petOrigin)
-                        .disableAutocorrection(true)
-                    HStack {
-                        TextField("Gewicht", text: $vm.petWeight)
-                            .keyboardType(.decimalPad)
-                        Text("kg")
-                    }
-                    HStack {
-                        TextField("Größe in cm", text: $vm.petHeight)
-                            .keyboardType(.decimalPad)
-                        Text("cm")
+                    .labelsHidden()
+                    Spacer()
+                }
+            } header: {
+                Text("Geburtstag")
+                    .darkgreenText()
+                    .font(.body)
+            }
+            .listRowBackground(Color.custom.backgroundColor)
+            
+            Section{
+                Picker("Geschlecht", selection: $vm.petGender) {
+                    ForEach(vm.genderList, id: \.self) {
+                        Text($0)
                     }
                 }
-
-                Section {
-                    Button("Speichern") {
-                        vm.save()
-                        dismiss()
-                    }
-                    .centerHorizontally()
-                }
+                .labelsHidden()
+            } header: {
+                Text("Geschlecht")
+                    .darkgreenText()
+                    .font(.body)
             }
-            .navigationBarTitle("Tierdaten ändern", displayMode: .inline)
-            .sheet(isPresented: $showingImagePicker) {
-                ImagePicker(image: $vm.selectedPicture)
-            }
+            
+            CustomTextFieldSection(title: "Rasse", text: $vm.petBreed)
+            CustomTextFieldSection(title: "Herkunft", text: $vm.petOrigin)
+            CustomTextFieldSection(title: "Gewicht", optionalText: "kg", text: $vm.petWeight)
+            CustomTextFieldSection(title: "Schulterhöhe", optionalText: "cm", text: $vm.petHeight)
+            SaveButton(saveFunc: vm.save, dismiss: dismiss)
+            
         }
-    }
-}
-
-struct PetDataInputView_Previews: PreviewProvider {
-    static var previews: some View {
-        PetDataInputView(vm: PetDataInputViewModel())
+        .sheet(isPresented: $showingImagePicker) {
+            ImagePicker(image: $vm.selectedPicture)
+        }
     }
 }

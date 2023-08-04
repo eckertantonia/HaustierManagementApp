@@ -48,14 +48,14 @@ extension PetData {
     public var diagnosisArray: [Diagnosis] {
         let set = diagnosis as? Set<Diagnosis> ?? []
         return set.sorted {
-            $0.diagnosisDescription < $1.diagnosisDescription
+            $0.wrappedDescription < $1.wrappedDescription
         }
     }
     
     public var medicationArry: [Medication] {
         let set = medication as? Set<Medication> ?? []
         return set.sorted {
-            $0.medication < $1.medication
+            $0.wrappedMedicationName < $1.wrappedMedicationName
         }
     }
     

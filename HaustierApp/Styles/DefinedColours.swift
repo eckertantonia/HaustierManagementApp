@@ -10,9 +10,9 @@ import SwiftUI
 
 extension Color {
     
-    static let ui = Custom_UI()
+    static let custom = Custom_Color()
     
-    struct Custom_UI {
+    struct Custom_Color {
         
         let darkGreen = Color("DarkGreen")
         let green = Color("Green")
@@ -23,24 +23,21 @@ extension Color {
         
     }
     
-//    Farben in dem Schema angeben
-//    static let ui = Color.UI_E()
-//
-//    struct UI_O {
-//        //Button
-//        let buttonOn = Color("ButtonOnColor")
-//        let buttonOff = Color("ButtonOffColor")
-//        let streamingOn = Color("StreamingOnColor")
-//
-//        let buttonLabel = Color("ButtonLabelColor")
-//
-//        // Areas
-//        let background = Color("BackgroundColor")
-//        let areaBackground = Color("AreaBackgroundColor")
-//        let cardbackground = Color("CardBackgroundColor")
-//
-//        //Label
-//        let label = Color("LabelColor")
-//    }
+}
+
+extension UIColor {
+    
+    static let customUI = Custom_UIColor()
+    
+    struct Custom_UIColor {
+    
+        let darkGreen = UIColor(named: "DarkGreen")
+        let green = UIColor(named: "Green")
+        let blueWhite = UIColor(named: "BlueWhite")
+        let burntOrange = UIColor(named: "BurntOrange")
+        let backgroundColor = UIColor(named: "LightBeige")
+        let lightOrange = UIColor(named: "LightOrange")
+        
+    }
     
 }

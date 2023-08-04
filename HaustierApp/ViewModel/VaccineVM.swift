@@ -16,6 +16,7 @@ class VaccineVM: NSObject,  ObservableObject {
     @Published var vaccineArray: [Vaccine]
     @Published var selectedDate: Date
     @Published var nextVaccinationDate: String?
+    @Published var nextVaccine: Vaccine?
     
     var vaccineDict: Dictionary<String, Vaccine>
     
@@ -29,25 +30,25 @@ class VaccineVM: NSObject,  ObservableObject {
         self.vaccineArray = []
         self.JSONvaccines = VaccineJSONService().vaccines
         self.vaccineDict = Dictionary<String, Vaccine>()
-        print(" Json vaccines \(JSONvaccines)")
         
         let fetchRequest: NSFetchRequest<PetData> = PetData.fetchRequest()
-                fetchRequest.predicate = NSPredicate(format: "petName == %@", pet.petName)
-                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "petName", ascending: true)]
-                
-                fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-                
-                super.init()
-                
-                fetchedResultsController.delegate = self
-                
-                do {
-                    try fetchedResultsController.performFetch()
-                } catch {
-                    print("Failed to perform fetch: \(error)")
-                }
-                
-                fetchObject(withName: pet.petName)
+        fetchRequest.predicate = NSPredicate(format: "petName == %@", pet.petName)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "petName", ascending: true)]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        super.init()
+        
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            print("Failed to perform fetch: \(error)")
+        }
+        
+        fetchObject(withName: pet.petName)
+        updateNextVaccine()
     }
     
     func fetchObject(withName name: String){
@@ -62,37 +63,57 @@ class VaccineVM: NSObject,  ObservableObject {
         vaccine.nextVaccination = computeNextVaccinationDate(vaccine: vaccine)
         do {
             try context.save()
-            print(vaccine)
         } catch {
-            print("fehler beim speichern")
+            print("fehler beim speichern von Vaccine")
         }
         
     }
     
     func computeNextVaccinationDate(vaccine: Vaccine) -> Date?{
         
-        if var date = vaccine.lastVaccination{
-            guard var months = Int(JSONvaccines.first(where: {$0.disease == vaccine.disease})?.protectedPeriod ?? "" ) else { return nil}
+        var nextDate: Date?
+        
+        if let date = vaccine.lastVaccination{
+            guard let months = Int(JSONvaccines.first(where: {$0.disease == vaccine.disease})?.protectedPeriod ?? "" ) else { return nil}
             
-            var calendar = Calendar.current
+            let calendar = Calendar.current
             if let newDate = calendar.date(byAdding: .month, value: months, to: date) {
                 let components = calendar.dateComponents([.month, .day], from: date)
                 if components.month == calendar.component(.month, from: newDate) {
                     nextVaccinationDate = formatDate(date: newDate)
-                    return newDate
+                    nextDate = newDate
                 } else {
                     var lastDayOfPreviousMonth = calendar.date(byAdding: .day, value: -1, to: newDate)!
                     while calendar.component(.month, from: lastDayOfPreviousMonth) == components.month {
                         lastDayOfPreviousMonth = calendar.date(byAdding: .day, value: -1, to: lastDayOfPreviousMonth)!
                     }
                     nextVaccinationDate = formatDate(date: lastDayOfPreviousMonth)
-                    return lastDayOfPreviousMonth
+                    nextDate = lastDayOfPreviousMonth
                 }
             }
         }
         
-        // falls hier nix funktioniert hat
-        return nil
+        updateNextVaccine()
+
+        return nextDate ?? nil
+        
+    }
+    
+    private func updateNextVaccine(){
+    
+        var helperArray = [Vaccine]()
+        
+        if !vaccineArray.isEmpty {
+            for vaccine in vaccineArray {
+                if vaccine.nextVaccination != nil {
+                    helperArray.append(vaccine)
+                }
+            }
+        }
+        
+        if !helperArray.isEmpty{
+            nextVaccine = helperArray.min(by: {$0.nextVaccination! > $1.nextVaccination!})
+        }
         
     }
     
@@ -125,14 +146,13 @@ class VaccineVM: NSObject,  ObservableObject {
         
         do {
             let results = try context.fetch(fetchRequest)
-            if let existingPet = results.first {
+            if results.first != nil {
                 let vaccine = Vaccine(context: context)
                 vaccine.disease = jsonVaccine.disease
                 vaccine.recommendedAge = jsonVaccine.recommendedAge
-//                vaccine.nextVaccination = vaccine.lastVaccination + jsonVaccine.protectedPeriod
+//                vaccine.nextVaccination = nextVaccinationDate
                 vaccine.notes = jsonVaccine.notes
                 vaccine.pet = pet
-                print(vaccine)
             }
             try context.save()
             
@@ -162,7 +182,6 @@ class VaccineVM: NSObject,  ObservableObject {
 extension VaccineVM: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.vaccineArray = fetchedResultsController.fetchedObjects?.first?.vaccineArray ?? []
-        print("petname \(fetchedResultsController.fetchedObjects?.first?.petName)")
-        print("foodArray \(vaccineArray)")
+        
     }
 }
